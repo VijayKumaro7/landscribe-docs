@@ -109,13 +109,13 @@ export const HeroSection = ({ currentLanguage, onLanguageChange, onGetStarted }:
         <div className="flex justify-between items-center mb-16">
           <div className="flex items-center gap-2">
             <FileText className="h-8 w-8 text-accent" />
-            <span className="text-xl font-bold text-white">LandDocs</span>
+            <span className="text-xl font-bold text-primary-foreground">LandDocs</span>
           </div>
           <LanguageSelector currentLanguage={currentLanguage} onLanguageChange={onLanguageChange} />
         </div>
 
         {/* Hero Content */}
-        <div className="max-w-4xl mx-auto text-center text-white">
+        <div className="max-w-4xl mx-auto text-center text-primary-foreground">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
             {t.title}
             <br />
@@ -135,9 +135,9 @@ export const HeroSection = ({ currentLanguage, onLanguageChange, onGetStarted }:
               {t.getStarted} <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
-              variant="outline" 
+              variant="hero" 
               size="lg" 
-              className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg hover-lift"
+              className="px-8 py-4 text-lg hover-lift"
             >
               {t.learnMore}
             </Button>
@@ -145,7 +145,7 @@ export const HeroSection = ({ currentLanguage, onLanguageChange, onGetStarted }:
 
           {/* Trust Badge */}
           <div className="text-center mb-12 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-            <p className="text-white/80 mb-4">{t.trustBadge}</p>
+            <p className="text-primary-foreground/80 mb-4">{t.trustBadge}</p>
             <div className="flex justify-center gap-8 flex-wrap">
               <div className="flex items-center gap-2">
                 <Shield className="h-5 w-5 text-success" />
