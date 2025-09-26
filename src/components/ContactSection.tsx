@@ -39,7 +39,9 @@ const translations = {
       phone: "+91 80 1234 5678",
       address: "Bangalore, Karnataka, India"
     },
-    success: "Request sent successfully! We'll contact you within 24 hours."
+    success: "Request sent successfully! We'll contact you within 24 hours.",
+    contactForm: "Send us a message",
+    whyChoose: "Why Choose Us?"
   },
   hi: {
     title: "व्यावसायिक सहायता चाहिए?",
@@ -68,7 +70,102 @@ const translations = {
       phone: "+91 80 1234 5678",
       address: "बेंगलुरु, कर्नाटक, भारत"
     },
-    success: "अनुरोध सफलतापूर्वक भेजा गया! हम 24 घंटे के भीतर आपसे संपर्क करेंगे।"
+    success: "अनुरोध सफलतापूर्वक भेजा गया! हम 24 घंटे के भीतर आपसे संपर्क करेंगे।",
+    contactForm: "हमें संदेश भेजें",
+    whyChoose: "हमें क्यों चुनें?"
+  },
+  kn: {
+    title: "ವೃತ್ತಿಪರ ಸಹಾಯ ಬೇಕೇ?",
+    subtitle: "ನಿಮ್ಮ ಭೂಮಿ ನೋಂದಣಿ ಅಗತ್ಯಗಳಿಗಾಗಿ ತಜ್ಞರ ಸಹಾಯವನ್ನು ಪಡೆಯಿರಿ. ಯಾವುದೇ ಗುಪ್ತ ಶುಲ್ಕಗಳಿಲ್ಲ, ಪಾರದರ್ಶಕ ಬೆಲೆ.",
+    form: {
+      name: "ಪೂರ್ಣ ಹೆಸರು",
+      email: "ಇಮೇಲ್ ವಿಳಾಸ",
+      phone: "ದೂರವಾಣಿ ಸಂಖ್ಯೆ",
+      service: "ಸೇವೆಯ ಪ್ರಕಾರ",
+      message: "ನಿಮ್ಮ ಅವಶ್ಯಕತೆಗಳನ್ನು ವಿವರಿಸಿ",
+      submit: "ವಿನಂತಿ ಕಳುಹಿಸಿ",
+      namePlaceholder: "ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+      emailPlaceholder: "ನಿಮ್ಮ.ಇಮೇಲ್@ಉದಾಹರಣೆ.com",
+      phonePlaceholder: "+91 XXXXX XXXXX",
+      messagePlaceholder: "ನಿಮ್ಮ ಭೂಮಿ ನೋಂದಣಿ ಅಗತ್ಯಗಳ ಬಗ್ಗೆ ನಮಗೆ ತಿಳಿಸಿ..."
+    },
+    services: [
+      "ದಾಖಲೆ ಪರಿಶೀಲನೆ",
+      "ಕಾನೂನು ಸಲಹೆ",
+      "ನೋಂದಣಿ ಪ್ರಕ್ರಿಯೆ",
+      "ಶೀರ್ಷಿಕೆ ಹುಡುಕಾಟ",
+      "ಕಸ್ಟಮ್ ಟೆಂಪ್ಲೇಟ್‌ಗಳು"
+    ],
+    contact: {
+      email: "support@landdocs.com",
+      phone: "+91 80 1234 5678",
+      address: "ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ, ಭಾರತ"
+    },
+    success: "ವಿನಂತಿಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಕಳುಹಿಸಲಾಗಿದೆ! ನಾವು 24 ಗಂಟೆಗಳೊಳಗೆ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.",
+    contactForm: "ನಮಗೆ ಸಂದೇಶ ಕಳುಹಿಸಿ",
+    whyChoose: "ನಮ್ಮನ್ನು ಏಕೆ ಆಯ್ಕೆ ಮಾಡಬೇಕು?"
+  },
+  mr: {
+    title: "व्यावसायिक मदत हवी आहे?",
+    subtitle: "तुमच्या जमीन नोंदणी गरजांसाठी तज्ञांची मदत घ्या. कोणतेही लपलेले शुल्क नाही, पारदर्शक किंमत.",
+    form: {
+      name: "पूर्ण नाव",
+      email: "ईमेल पत्ता",
+      phone: "फोन नंबर",
+      service: "सेवेचा प्रकार",
+      message: "तुमच्या आवश्यकतांचे वर्णन करा",
+      submit: "विनंती पाठवा",
+      namePlaceholder: "तुमचे पूर्ण नाव टाका",
+      emailPlaceholder: "तुमचा.ईमेल@उदाहरण.com",
+      phonePlaceholder: "+91 XXXXX XXXXX",
+      messagePlaceholder: "तुमच्या जमीन नोंदणी गरजांबद्दल आम्हाला सांगा..."
+    },
+    services: [
+      "दस्तऐवज पडताळणी",
+      "कायदेशीर सल्ला",
+      "नोंदणी प्रक्रिया",
+      "शीर्षक शोध",
+      "कस्टम टेम्प्लेट्स"
+    ],
+    contact: {
+      email: "support@landdocs.com",
+      phone: "+91 80 1234 5678",
+      address: "बेंगळूरू, कर्नाटक, भारत"
+    },
+    success: "विनंती यशस्वीरित्या पाठवली! आम्ही 24 तासांत तुमच्याशी संपर्क साधू.",
+    contactForm: "आम्हाला संदेश पाठवा",
+    whyChoose: "आम्हाला का निवडावे?"
+  },
+  te: {
+    title: "వృత్తిపరమైన సహాయం అవసరమా?",
+    subtitle: "మీ భూమి నమోదు అవసరాలకు నిపుణుల సహాయం పొందండి. దాచిన రుసుములు లేవు, పారదర్శక ధర.",
+    form: {
+      name: "పూర్తి పేరు",
+      email: "ఇమెయిల్ చిరునామా",
+      phone: "ఫోన్ నంబర్",
+      service: "సేవ రకం",
+      message: "మీ అవసరాలను వివరించండి",
+      submit: "అభ్యర్థన పంపండి",
+      namePlaceholder: "మీ పూర్తి పేరు నమోదు చేయండి",
+      emailPlaceholder: "మీ.ఇమెయిల్@ఉదాహరణ.com",
+      phonePlaceholder: "+91 XXXXX XXXXX",
+      messagePlaceholder: "మీ భూమి నమోదు అవసరాల గురించి మాకు చెప్పండి..."
+    },
+    services: [
+      "పత్రాల ధృవీకరణ",
+      "చట్టపరమైన సలహా",
+      "నమోదు ప్రక్రియ",
+      "టైటిల్ సెర్చ్",
+      "కస్టమ్ టెంప్లేట్లు"
+    ],
+    contact: {
+      email: "support@landdocs.com",
+      phone: "+91 80 1234 5678",
+      address: "బెంగళూరు, కర్ణాటక, భారతదేశం"
+    },
+    success: "అభ్యర్థన విజయవంతంగా పంపబడింది! మేము 24 గంటల్లో మిమ్మల్ని సంప్రదిస్తాము.",
+    contactForm: "మాకు సందేశం పంపండి",
+    whyChoose: "మమ్మల్ని ఎందుకు ఎంచుకోవాలి?"
   }
 };
 
@@ -133,7 +230,7 @@ export const ContactSection = ({ currentLanguage }: ContactSectionProps) => {
           {/* Contact Form */}
           <Card className="bg-card shadow-card border-0 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
             <CardHeader>
-              <CardTitle className="text-2xl text-foreground">Send us a message</CardTitle>
+              <CardTitle className="text-2xl text-foreground">{t.contactForm}</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -262,7 +359,7 @@ export const ContactSection = ({ currentLanguage }: ContactSectionProps) => {
             <div className="bg-success/10 p-6 rounded-lg border border-success/20">
               <div className="flex items-center gap-3 mb-3">
                 <CheckCircle className="h-6 w-6 text-success" />
-                <h4 className="font-semibold text-success">Why Choose Us?</h4>
+                <h4 className="font-semibold text-success">{t.whyChoose}</h4>
               </div>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>• 100% Legal Compliance</li>
