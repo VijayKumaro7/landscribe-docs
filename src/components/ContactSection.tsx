@@ -41,7 +41,16 @@ const translations = {
     },
     success: "Request sent successfully! We'll contact you within 24 hours.",
     contactForm: "Send us a message",
-    whyChoose: "Why Choose Us?"
+    whyChoose: "Why Choose Us?",
+    selectService: "Select a service",
+    validationTitle: "Missing Information",
+    validationMessage: "Please fill in all required fields.",
+    whyChooseItems: [
+      "100% Legal Compliance",
+      "Zero Hidden Charges",
+      "24/7 Expert Support",
+      "Instant Template Access"
+    ]
   },
   hi: {
     title: "व्यावसायिक सहायता चाहिए?",
@@ -72,7 +81,16 @@ const translations = {
     },
     success: "अनुरोध सफलतापूर्वक भेजा गया! हम 24 घंटे के भीतर आपसे संपर्क करेंगे।",
     contactForm: "हमें संदेश भेजें",
-    whyChoose: "हमें क्यों चुनें?"
+    whyChoose: "हमें क्यों चुनें?",
+    selectService: "सेवा चुनें",
+    validationTitle: "जानकारी अधूरी है",
+    validationMessage: "कृपया सभी आवश्यक फ़ील्ड भरें।",
+    whyChooseItems: [
+      "100% कानूनी अनुपालन",
+      "कोई छुपी फीस नहीं",
+      "24/7 विशेषज्ञ सहायता",
+      "तुरंत टेम्प्लेट एक्सेस"
+    ]
   },
   kn: {
     title: "ವೃತ್ತಿಪರ ಸಹಾಯ ಬೇಕೇ?",
@@ -103,7 +121,16 @@ const translations = {
     },
     success: "ವಿನಂತಿಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಕಳುಹಿಸಲಾಗಿದೆ! ನಾವು 24 ಗಂಟೆಗಳೊಳಗೆ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.",
     contactForm: "ನಮಗೆ ಸಂದೇಶ ಕಳುಹಿಸಿ",
-    whyChoose: "ನಮ್ಮನ್ನು ಏಕೆ ಆಯ್ಕೆ ಮಾಡಬೇಕು?"
+    whyChoose: "ನಮ್ಮನ್ನು ಏಕೆ ಆಯ್ಕೆ ಮಾಡಬೇಕು?",
+    selectService: "ಸೇವೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ",
+    validationTitle: "ಮಾಹಿತಿ ಕೊರತೆ",
+    validationMessage: "ದಯವಿಟ್ಟು ಎಲ್ಲಾ ಅಗತ್ಯ ಕ್ಷೇತ್ರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ.",
+    whyChooseItems: [
+      "100% ಕಾನೂನು ಅನುಪಾಲನೆ",
+      "ಯಾವುದೇ ಗುಪ್ತ ಶುಲ್ಕಗಳಿಲ್ಲ",
+      "24/7 ವಿಶೇಷಜ್ಞ ಬೆಂಬಲ",
+      "ತಕ್ಷಣ ಟೆಂಪ್ಲೇಟ್ ಪ್ರವೇಶ"
+    ]
   },
   mr: {
     title: "व्यावसायिक मदत हवी आहे?",
@@ -134,7 +161,16 @@ const translations = {
     },
     success: "विनंती यशस्वीरित्या पाठवली! आम्ही 24 तासांत तुमच्याशी संपर्क साधू.",
     contactForm: "आम्हाला संदेश पाठवा",
-    whyChoose: "आम्हाला का निवडावे?"
+    whyChoose: "आम्हाला का निवडावे?",
+    selectService: "सेवा निवडा",
+    validationTitle: "माहिती अपूर्ण आहे",
+    validationMessage: "कृपया सर्व आवश्यक फील्ड भरा.",
+    whyChooseItems: [
+      "100% कायदेशीर अनुपालन",
+      "कोणतेही लपलेले शुल्क नाही",
+      "24/7 तज्ञ सहाय्य",
+      "तात्काळ टेम्प्लेट एक्सेस"
+    ]
   },
   te: {
     title: "వృత్తిపరమైన సహాయం అవసరమా?",
@@ -165,7 +201,16 @@ const translations = {
     },
     success: "అభ్యర్థన విజయవంతంగా పంపబడింది! మేము 24 గంటల్లో మిమ్మల్ని సంప్రదిస్తాము.",
     contactForm: "మాకు సందేశం పంపండి",
-    whyChoose: "మమ్మల్ని ఎందుకు ఎంచుకోవాలి?"
+    whyChoose: "మమ్మల్ని ఎందుకు ఎంచుకోవాలి?",
+    selectService: "సేవను ఎంచుకోండి",
+    validationTitle: "సమాచారం తప్పిపోయింది",
+    validationMessage: "దయచేసి అన్ని అవసరమైన ఫీల్డ్‌లను పూరించండి.",
+    whyChooseItems: [
+      "100% చట్టపరమైన అనుపాలన",
+      "దాచిన ఛార్జీలు లేవు",
+      "24/7 నిపుణుల మద్దతు",
+      "తక్షణ టెంప్లేట్ యాక్సెస్"
+    ]
   }
 };
 
@@ -187,8 +232,8 @@ export const ContactSection = ({ currentLanguage }: ContactSectionProps) => {
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
+        title: t.validationTitle,
+        description: t.validationMessage,
         variant: "destructive",
       });
       return;
@@ -279,7 +324,7 @@ export const ContactSection = ({ currentLanguage }: ContactSectionProps) => {
                       onChange={(e) => handleInputChange("service", e.target.value)}
                       className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm hover-lift transition-all duration-200 focus:shadow-soft"
                     >
-                      <option value="">Select a service</option>
+                      <option value="">{t.selectService}</option>
                       {t.services.map((service, index) => (
                         <option key={index} value={service}>{service}</option>
                       ))}
@@ -362,10 +407,9 @@ export const ContactSection = ({ currentLanguage }: ContactSectionProps) => {
                 <h4 className="font-semibold text-success">{t.whyChoose}</h4>
               </div>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• 100% Legal Compliance</li>
-                <li>• Zero Hidden Charges</li>
-                <li>• 24/7 Expert Support</li>
-                <li>• Instant Template Access</li>
+                {t.whyChooseItems.map((item, index) => (
+                  <li key={index}>• {item}</li>
+                ))}
               </ul>
             </div>
           </div>

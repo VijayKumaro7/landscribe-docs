@@ -6,23 +6,23 @@ import { ContactSection } from "@/components/ContactSection";
 const footerTranslations = {
   en: {
     tagline: "Secure, Transparent, Professional Land Registration Services",
-    copyright: "© 2024 LandDocs. All rights reserved. | Made in India 🇮🇳"
+    copyright: "LandDocs. All rights reserved. | Made in India 🇮🇳"
   },
   hi: {
     tagline: "सुरक्षित, पारदर्शी, व्यावसायिक भूमि पंजीकरण सेवाएं",
-    copyright: "© 2024 LandDocs. सभी अधिकार सुरक्षित। | भारत में निर्मित 🇮🇳"
+    copyright: "LandDocs. सभी अधिकार सुरक्षित। | भारत में निर्मित 🇮🇳"
   },
   kn: {
     tagline: "ಸುರಕ್ಷಿತ, ಪಾರದರ್ಶಕ, ವೃತ್ತಿಪರ ಭೂಮಿ ನೋಂದಣಿ ಸೇವೆಗಳು",
-    copyright: "© 2024 LandDocs. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ। | ಭಾರತದಲ್ಲಿ ತಯಾರಿಸಲಾಗಿದೆ 🇮🇳"
+    copyright: "LandDocs. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ। | ಭಾರತದಲ್ಲಿ ತಯಾರಿಸಲಾಗಿದೆ 🇮🇳"
   },
   mr: {
     tagline: "सुरक्षित, पारदर्शक, व्यावसायिक जमीन नोंदणी सेवा",
-    copyright: "© 2024 LandDocs. सर्व हक्क राखीव। | भारतात निर्मित 🇮🇳"
+    copyright: "LandDocs. सर्व हक्क राखीव। | भारतात निर्मित 🇮🇳"
   },
   te: {
     tagline: "సురక్షిత, పారదర్శక, వృత్తిపరమైన భూమి నమోదు సేవలు",
-    copyright: "© 2024 LandDocs. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి। | భారతదేశంలో తయారు చేయబడింది 🇮🇳"
+    copyright: "LandDocs. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి। | భారతదేశంలో తయారు చేయబడింది 🇮🇳"
   }
 };
 
@@ -68,7 +68,7 @@ const Index = () => {
             {footerTranslations[currentLanguage as keyof typeof footerTranslations]?.tagline || footerTranslations.en.tagline}
           </p>
           <p className="text-sm opacity-60">
-            {footerTranslations[currentLanguage as keyof typeof footerTranslations]?.copyright || footerTranslations.en.copyright}
+            {`© ${new Date().getFullYear()} ${(footerTranslations[currentLanguage as keyof typeof footerTranslations]?.copyright || footerTranslations.en.copyright)}`}
           </p>
         </div>
       </footer>
