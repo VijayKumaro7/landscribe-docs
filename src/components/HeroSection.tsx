@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ArrowRight, Shield, FileText, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "./LanguageSelector";
