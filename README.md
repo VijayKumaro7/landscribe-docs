@@ -115,10 +115,10 @@ Custom utilities include `.bg-gradient-hero`, `.shadow-card`, `.hover-lift`, and
 
 ```bash
 # Clone the repository
-git clone <YOUR_GIT_URL>
+git clone https://github.com/vijaykumaro7/landscribe-docs.git
 
 # Navigate into the project
-cd <YOUR_PROJECT_NAME>
+cd landscribe-docs
 
 # Install dependencies
 npm install
@@ -127,7 +127,7 @@ npm install
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173` by default.
+The app will be available at `http://localhost:8080` by default.
 
 ---
 
