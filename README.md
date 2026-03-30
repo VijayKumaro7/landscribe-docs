@@ -4,6 +4,12 @@
 
 ---
 
+## Preview
+
+![LandDocs UI Preview](docs/preview.png)
+
+---
+
 ## What is LandDocs?
 
 LandDocs is a React-based web platform that helps property owners, legal professionals, and individuals navigate land registration paperwork without intermediaries. It provides downloadable legal document templates (sale deeds, gift deeds, lease agreements, etc.) in five Indian languages, along with a professional services inquiry form.
