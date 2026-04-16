@@ -7,6 +7,7 @@ interface HeroSectionProps {
   currentLanguage: string;
   onLanguageChange: (language: string) => void;
   onGetStarted: () => void;
+  onLearnMore: () => void;
 }
 
 const translations = {
@@ -77,7 +78,7 @@ const translations = {
   }
 };
 
-export const HeroSection = ({ currentLanguage, onLanguageChange, onGetStarted }: HeroSectionProps) => {
+export const HeroSection = ({ currentLanguage, onLanguageChange, onGetStarted, onLearnMore }: HeroSectionProps) => {
   const t = translations[currentLanguage as keyof typeof translations] || translations.en;
 
   return (
@@ -133,10 +134,11 @@ export const HeroSection = ({ currentLanguage, onLanguageChange, onGetStarted }:
             >
               {t.getStarted} <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button 
-              variant="hero" 
-              size="lg" 
+            <Button
+              variant="hero"
+              size="lg"
               className="px-8 py-4 text-lg hover-lift"
+              onClick={onLearnMore}
             >
               {t.learnMore}
             </Button>
