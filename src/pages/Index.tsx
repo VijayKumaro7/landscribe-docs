@@ -30,9 +30,11 @@ const Index = () => {
   const [currentLanguage, setCurrentLanguage] = useState("en");
 
   const handleGetStarted = () => {
-    // Scroll to templates section
-    const templatesSection = document.querySelector('#templates');
-    templatesSection?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('#templates')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleLearnMore = () => {
+    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleLanguageChange = (languageCode: string) => {
@@ -42,10 +44,11 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <HeroSection 
+      <HeroSection
         currentLanguage={currentLanguage}
         onLanguageChange={handleLanguageChange}
         onGetStarted={handleGetStarted}
+        onLearnMore={handleLearnMore}
       />
 
       {/* Templates Section */}
