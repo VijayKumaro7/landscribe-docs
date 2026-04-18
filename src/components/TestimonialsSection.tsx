@@ -118,7 +118,7 @@ export const TestimonialsSection = ({ currentLanguage }: TestimonialsSectionProp
   const t = translations[currentLanguage as keyof typeof translations] || translations.en;
 
   return (
-    <section className="py-24 bg-background">
+    <section id="testimonials" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">

@@ -1,6 +1,6 @@
-import { Download, Star, ArrowUpRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Download, Star, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 interface TemplatesSectionProps {
   currentLanguage: string;
@@ -138,6 +138,19 @@ const translations = {
 
 export const TemplatesSection = ({ currentLanguage }: TemplatesSectionProps) => {
   const t = translations[currentLanguage as keyof typeof translations] || translations.en;
+  const { toast } = useToast();
+
+  const handleDownload = (title: string, type: string) => {
+    if (type === "premium") {
+      toast({ title: "Premium Template", description: `Upgrade to download "${title}". Contact us for pricing.` });
+    } else {
+      toast({ title: "Downloading…", description: `"${title}" will be ready shortly.` });
+    }
+  };
+
+  const handlePreview = (title: string) => {
+    toast({ title: "Preview", description: `Opening preview for "${title}"…` });
+  };
 
   return (
     <section id="templates" className="py-24 bg-muted/40">
@@ -211,16 +224,19 @@ export const TemplatesSection = ({ currentLanguage }: TemplatesSectionProps) => 
                 {/* Actions */}
                 <div className="flex gap-2">
                   <Button
+                    onClick={() => handleDownload(template.title, template.type)}
                     className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-medium text-sm h-9 rounded-sm"
                   >
                     <Download className="h-3.5 w-3.5 mr-2" />
                     {t.downloadNow}
                   </Button>
                   <Button
+                    onClick={() => handlePreview(template.title)}
                     variant="outline"
                     className="h-9 px-3 rounded-sm border-border hover:bg-muted/60 font-sans text-sm"
+                    aria-label={t.preview}
                   >
-                    <ArrowUpRight className="h-4 w-4" />
+                    <Eye className="h-4 w-4" />
                   </Button>
                 </div>
               </div>

@@ -17,26 +17,55 @@ const navT = {
   te: { home: "హోమ్", templates: "టెంప్లేట్లు", howItWorks: "ఎలా పని చేస్తుంది", contact: "సంప్రదించండి", cta: "మొదలుపెట్టండి" },
 };
 
-const links = [
-  { key: "home", id: "#hero" },
-  { key: "templates", id: "#templates" },
-  { key: "howItWorks", id: "#how-it-works" },
-  { key: "contact", id: "#contact" },
+const NAV_LINKS = [
+  { key: "home",       id: "hero" },
+  { key: "templates",  id: "templates" },
+  { key: "howItWorks", id: "how-it-works" },
+  { key: "contact",    id: "contact" },
 ] as const;
 
+// Which section id maps to each nav key
+const SECTION_TO_KEY: Record<string, string> = {
+  hero:          "home",
+  features:      "home",
+  templates:     "templates",
+  "how-it-works": "howItWorks",
+  testimonials:  "contact",
+  contact:       "contact",
+};
+
+const ALL_SECTION_IDS = ["hero", "features", "templates", "how-it-works", "testimonials", "contact"];
+
 export const Navbar = ({ currentLanguage, onLanguageChange, onGetStarted }: NavbarProps) => {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled]     = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeKey, setActiveKey]   = useState("home");
   const t = navT[currentLanguage as keyof typeof navT] || navT.en;
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handler, { passive: true });
-    return () => window.removeEventListener("scroll", handler);
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Track active section via IntersectionObserver
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    ALL_SECTION_IDS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveKey(SECTION_TO_KEY[id] ?? "home"); },
+        { threshold: 0.4, rootMargin: "-5% 0px -5% 0px" }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   const scrollTo = (id: string) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMobileOpen(false);
   };
 
@@ -44,33 +73,43 @@ export const Navbar = ({ currentLanguage, onLanguageChange, onGetStarted }: Navb
     ? "bg-white/95 backdrop-blur-sm shadow-sm border-b border-border"
     : "bg-transparent";
 
-  const linkColor = scrolled ? "text-foreground/70 hover:text-primary" : "text-white/80 hover:text-white";
-  const logoColor = scrolled ? "text-foreground" : "text-white";
-
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBase}`}>
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+
         {/* Logo */}
-        <div className="flex items-center gap-2.5 cursor-pointer" onClick={() => scrollTo("#hero")}>
+        <div className="flex items-center gap-2.5 cursor-pointer" onClick={() => scrollTo("hero")}>
           <div className="w-8 h-8 bg-primary flex items-center justify-center rounded-sm">
             <FileText className="h-4 w-4 text-primary-foreground" />
           </div>
-          <span className={`text-lg font-bold font-serif tracking-wide transition-colors ${logoColor}`}>
+          <span className={`text-lg font-bold font-serif tracking-wide transition-colors ${scrolled ? "text-foreground" : "text-white"}`}>
             LandDocs
           </span>
         </div>
 
-        {/* Desktop nav links */}
+        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-7">
-          {links.map(({ key, id }) => (
-            <button
-              key={id}
-              onClick={() => scrollTo(id)}
-              className={`text-sm font-medium transition-colors ${linkColor}`}
-            >
-              {t[key]}
-            </button>
-          ))}
+          {NAV_LINKS.map(({ key, id }) => {
+            const isActive = activeKey === key;
+            return (
+              <button
+                key={id}
+                onClick={() => scrollTo(id)}
+                className={`
+                  relative text-sm font-medium transition-colors pb-0.5
+                  ${scrolled
+                    ? isActive ? "text-primary" : "text-foreground/60 hover:text-primary"
+                    : isActive ? "text-white" : "text-white/70 hover:text-white"}
+                `}
+              >
+                {t[key]}
+                {/* Active underline */}
+                <span
+                  className={`absolute bottom-0 left-0 h-[2px] bg-accent transition-all duration-300 ${isActive ? "w-full" : "w-0"}`}
+                />
+              </button>
+            );
+          })}
         </nav>
 
         {/* Desktop right */}
@@ -97,15 +136,20 @@ export const Navbar = ({ currentLanguage, onLanguageChange, onGetStarted }: Navb
       {/* Mobile drawer */}
       {mobileOpen && (
         <div className="md:hidden bg-white border-b border-border px-6 py-5 space-y-1">
-          {links.map(({ key, id }) => (
-            <button
-              key={id}
-              onClick={() => scrollTo(id)}
-              className="block w-full text-left text-sm font-medium text-foreground/70 hover:text-primary py-2 border-b border-border/50 last:border-0"
-            >
-              {t[key]}
-            </button>
-          ))}
+          {NAV_LINKS.map(({ key, id }) => {
+            const isActive = activeKey === key;
+            return (
+              <button
+                key={id}
+                onClick={() => scrollTo(id)}
+                className={`block w-full text-left text-sm font-medium py-2.5 border-b border-border/50 last:border-0 transition-colors ${
+                  isActive ? "text-primary font-semibold" : "text-foreground/65 hover:text-primary"
+                }`}
+              >
+                {t[key]}
+              </button>
+            );
+          })}
           <div className="flex items-center gap-3 pt-3">
             <LanguageSelector currentLanguage={currentLanguage} onLanguageChange={onLanguageChange} />
             <Button
