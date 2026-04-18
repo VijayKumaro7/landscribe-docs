@@ -1,169 +1,184 @@
-import { ArrowRight, Shield, FileText, Users } from "lucide-react";
+import { ArrowRight, ChevronDown, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { LanguageSelector } from "./LanguageSelector";
 import heroImage from "@/assets/hero-image.jpg";
 
 interface HeroSectionProps {
   currentLanguage: string;
-  onLanguageChange: (language: string) => void;
   onGetStarted: () => void;
   onLearnMore: () => void;
 }
 
 const translations = {
   en: {
-    title: "Secure Land Registration",
-    subtitle: "Documentation Made Simple",
-    description: "Get professional land registration templates and transparent legal services with zero intermediaries. Trusted by thousands across India.",
-    getStarted: "Get Started",
-    learnMore: "Learn More",
-    trustBadge: "Trusted by 10,000+ Property Owners",
-    features: {
-      secure: "100% Secure & Legal",
-      transparent: "Transparent Pricing",
-      support: "Expert Support"
-    }
+    badge: "Trusted Land Documentation Platform",
+    line1: "Secure Land",
+    line2: "Registration",
+    accent: "Made Simple.",
+    description:
+      "Professional land registration templates and transparent legal services with zero intermediaries. Trusted by thousands of property owners across India.",
+    cta: "Browse Templates",
+    secondary: "How It Works",
+    stats: [
+      { value: "10K+", label: "Documents Processed" },
+      { value: "5", label: "Languages" },
+      { value: "100%", label: "Legal Compliance" },
+      { value: "24/7", label: "Expert Support" },
+    ],
   },
   hi: {
-    title: "सुरक्षित भूमि पंजीकरण",
-    subtitle: "दस्तावेज़ीकरण सरल बनाया गया",
-    description: "शून्य मध्यस्थों के साथ व्यावसायिक भूमि पंजीकरण टेम्प्लेट और पारदर्शी कानूनी सेवाएं प्राप्त करें। भारत भर में हजारों लोगों द्वारा भरोसा किया गया।",
-    getStarted: "शुरू करें",
-    learnMore: "और जानें",
-    trustBadge: "10,000+ संपत्ति मालिकों द्वारा भरोसा",
-    features: {
-      secure: "100% सुरक्षित और कानूनी",
-      transparent: "पारदर्शी मूल्य निर्धारण",
-      support: "विशेषज्ञ सहायता"
-    }
+    badge: "विश्वसनीय भूमि दस्तावेज़ीकरण प्लेटफ़ॉर्म",
+    line1: "सुरक्षित भूमि",
+    line2: "पंजीकरण",
+    accent: "सरल बनाया गया।",
+    description:
+      "शून्य मध्यस्थों के साथ व्यावसायिक भूमि पंजीकरण टेम्प्लेट और पारदर्शी कानूनी सेवाएं। भारत भर में हजारों लोगों द्वारा भरोसा किया गया।",
+    cta: "टेम्प्लेट देखें",
+    secondary: "कैसे काम करता है",
+    stats: [
+      { value: "10K+", label: "दस्तावेज़" },
+      { value: "5", label: "भाषाएं" },
+      { value: "100%", label: "कानूनी" },
+      { value: "24/7", label: "सहायता" },
+    ],
   },
   kn: {
-    title: "ಸುರಕ್ಷಿತ ಭೂಮಿ ನೋಂದಣಿ",
-    subtitle: "ದಾಖಲಾತು ಸರಳೀಕೃತ",
-    description: "ಶೂನ್ಯ ಮಧ್ಯವರ್ತಿಗಳೊಂದಿಗೆ ವೃತ್ತಿಪರ ಭೂಮಿ ನೋಂದಣಿ ಟೆಂಪ್ಲೇಟ್‌ಗಳು ಮತ್ತು ಪಾರದರ್ಶಕ ಕಾನೂನು ಸೇವೆಗಳನ್ನು ಪಡೆಯಿರಿ। ಭಾರತದಾದ್ಯಂತ ಸಾವಿರಾರು ಜನರಿಂದ ವಿಶ್ವಸನೀಯ।",
-    getStarted: "ಪ್ರಾರಂಭಿಸಿ",
-    learnMore: "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ",
-    trustBadge: "10,000+ ಆಸ್ತಿ ಮಾಲೀಕರು ವಿಶ್ವಾಸ",
-    features: {
-      secure: "100% ಸುರಕ್ಷಿತ ಮತ್ತು ಕಾನೂನುಬದ್ಧ",
-      transparent: "ಪಾರದರ್ಶಕ ಬೆಲೆ",
-      support: "ವಿಶೇಷಜ್ಞ ಬೆಂಬಲ"
-    }
+    badge: "ವಿಶ್ವಾಸಾರ್ಹ ಭೂಮಿ ದಾಖಲಾತಿ ವೇದಿಕೆ",
+    line1: "ಸುರಕ್ಷಿತ ಭೂಮಿ",
+    line2: "ನೋಂದಣಿ",
+    accent: "ಸರಳಗೊಳಿಸಲಾಗಿದೆ.",
+    description:
+      "ಶೂನ್ಯ ಮಧ್ಯವರ್ತಿಗಳೊಂದಿಗೆ ವೃತ್ತಿಪರ ಭೂಮಿ ನೋಂದಣಿ ಟೆಂಪ್ಲೇಟ್‌ಗಳು ಮತ್ತು ಪಾರದರ್ಶಕ ಕಾನೂನು ಸೇವೆಗಳು.",
+    cta: "ಟೆಂಪ್ಲೇಟ್ ನೋಡಿ",
+    secondary: "ಹೇಗೆ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತದೆ",
+    stats: [
+      { value: "10K+", label: "ದಾಖಲೆಗಳು" },
+      { value: "5", label: "ಭಾಷೆಗಳು" },
+      { value: "100%", label: "ಕಾನೂನು" },
+      { value: "24/7", label: "ಬೆಂಬಲ" },
+    ],
   },
   mr: {
-    title: "सुरक्षित जमीन नोंदणी",
-    subtitle: "कागदपत्रे सोपी केली",
-    description: "शून्य मध्यस्थांसह व्यावसायिक जमीन नोंदणी टेम्प्लेट्स आणि पारदर्शक कायदेशीर सेवा मिळवा। संपूर्ण भारतातील हजारो लोकांचा विश्वास।",
-    getStarted: "सुरुवात करा",
-    learnMore: "अधिक जाणा",
-    trustBadge: "10,000+ मालमत्ता मालकांचा विश्वास",
-    features: {
-      secure: "100% सुरक्षित आणि कायदेशीर",
-      transparent: "पारदर्शक किंमत",
-      support: "तज्ञ सहाय्य"
-    }
+    badge: "विश्वासार्ह जमीन दस्तऐवजीकरण व्यासपीठ",
+    line1: "सुरक्षित जमीन",
+    line2: "नोंदणी",
+    accent: "सोपे केले.",
+    description:
+      "शून्य मध्यस्थांसह व्यावसायिक जमीन नोंदणी टेम्प्लेट्स आणि पारदर्शक कायदेशीर सेवा.",
+    cta: "टेम्प्लेट्स पहा",
+    secondary: "कसे काम करते",
+    stats: [
+      { value: "10K+", label: "दस्तऐवज" },
+      { value: "5", label: "भाषा" },
+      { value: "100%", label: "कायदेशीर" },
+      { value: "24/7", label: "मदत" },
+    ],
   },
   te: {
-    title: "సురక్షిత భూమి నమోదు",
-    subtitle: "డాక్యుమెంటేషన్ సులభం చేయబడింది",
-    description: "జీరో ఇంటర్మీడియరీలతో ప్రొఫెషనల్ ల్యాండ్ రిజిస్ట్రేషన్ టెంప్లేట్స్ మరియు పారదర్శక న్యాయ సేవలను పొందండి. భారతదేశం అంతటా వేలాది మంది విశ్వసించారు.",
-    getStarted: "మొదలుపెట్టండి",
-    learnMore: "మరింత తెలుసుకోండి",
-    trustBadge: "10,000+ ఆస్తి యజమానుల నమ్మకం",
-    features: {
-      secure: "100% సురక్షితం మరియు చట్టపరమైనది",
-      transparent: "పారదర్శక ధర",
-      support: "నిపుణుల మద్దతు"
-    }
-  }
+    badge: "విశ్వసనీయ భూమి డాక్యుమెంటేషన్ వేదిక",
+    line1: "సురక్షిత భూమి",
+    line2: "నమోదు",
+    accent: "సులభం చేయబడింది.",
+    description:
+      "జీరో ఇంటర్మీడియరీలతో ప్రొఫెషనల్ ల్యాండ్ రిజిస్ట్రేషన్ టెంప్లేట్స్ మరియు పారదర్శక న్యాయ సేవలు.",
+    cta: "టెంప్లేట్లు చూడండి",
+    secondary: "ఎలా పని చేస్తుంది",
+    stats: [
+      { value: "10K+", label: "పత్రాలు" },
+      { value: "5", label: "భాషలు" },
+      { value: "100%", label: "చట్టపరమైన" },
+      { value: "24/7", label: "మద్దతు" },
+    ],
+  },
 };
 
-export const HeroSection = ({ currentLanguage, onLanguageChange, onGetStarted, onLearnMore }: HeroSectionProps) => {
+export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: HeroSectionProps) => {
   const t = translations[currentLanguage as keyof typeof translations] || translations.en;
 
   return (
-    <div className="relative min-h-screen bg-gradient-hero overflow-hidden">
-      {/* Hero Background Image */}
-      <div 
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      ></div>
-      
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
-
-      {/* Animated Background Elements */}
+    <section id="hero" className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+      {/* Background image */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-20 h-20 bg-accent/20 rounded-full animate-float"></div>
-        <div className="absolute top-40 right-20 w-32 h-32 bg-primary/10 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-40 left-1/4 w-16 h-16 bg-secondary/30 rounded-full animate-float" style={{animationDelay: '4s'}}></div>
+        <img
+          src={heroImage}
+          alt="Land registration"
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay — deep forest green tint */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a1f0c]/96 via-[#0d2410]/92 to-[#162b0e]/88" />
+        {/* Subtle grid texture */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M0 0h1v40H0zm40 0h-1v40h1zM0 0v1h40V0zm0 40v-1h40v1z'/%3E%3C/g%3E%3C/svg%3E\")",
+          }}
+        />
       </div>
 
-      <div className="container mx-auto px-4 pt-20 pb-32 relative z-10">
-        {/* Header with Language Selector */}
-        <div className="flex justify-between items-center mb-16">
-          <div className="flex items-center gap-2">
-            <FileText className="h-8 w-8 text-accent" />
-            <span className="text-xl font-bold text-primary-foreground">LandDocs</span>
-          </div>
-          <LanguageSelector currentLanguage={currentLanguage} onLanguageChange={onLanguageChange} />
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-6 pt-28 pb-20 flex flex-col items-center text-center">
+        {/* Badge */}
+        <div className="mb-8 animate-fade-in">
+          <span className="inline-flex items-center gap-2 bg-white/8 backdrop-blur-sm border border-white/15 text-white/80 text-xs font-sans font-medium tracking-widest uppercase px-5 py-2.5 rounded-full">
+            <Shield className="h-3.5 w-3.5 text-accent shrink-0" />
+            {t.badge}
+          </span>
         </div>
 
-        {/* Hero Content */}
-        <div className="max-w-4xl mx-auto text-center text-primary-foreground">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
-            {t.title}
-            <br />
-            <span className="text-accent">{t.subtitle}</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl mb-12 opacity-90 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            {t.description}
-          </p>
+        {/* Heading */}
+        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[88px] font-bold text-white leading-[1.08] tracking-tight mb-6 animate-fade-in-up">
+          {t.line1}
+          <br />
+          {t.line2}
+          <br />
+          <em className="not-italic text-accent">{t.accent}</em>
+        </h1>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-            <Button 
-              onClick={onGetStarted}
-              size="lg" 
-              className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4 text-lg font-semibold hover-lift hover-glow"
-            >
-              {t.getStarted} <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              variant="hero"
-              size="lg"
-              className="px-8 py-4 text-lg hover-lift"
-              onClick={onLearnMore}
-            >
-              {t.learnMore}
-            </Button>
-          </div>
+        {/* Description */}
+        <p className="font-sans text-white/65 text-lg md:text-xl max-w-2xl leading-relaxed mb-10 animate-fade-in-up delay-200">
+          {t.description}
+        </p>
 
-          {/* Trust Badge */}
-          <div className="text-center mb-12 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-            <p className="text-primary-foreground/80 mb-4">{t.trustBadge}</p>
-            <div className="flex justify-center gap-8 flex-wrap">
-              <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-success" />
-                <span className="text-sm">{t.features.secure}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <FileText className="h-5 w-5 text-accent" />
-                <span className="text-sm">{t.features.transparent}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Users className="h-5 w-5 text-secondary" />
-                <span className="text-sm">{t.features.support}</span>
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-3 mb-20 animate-fade-in-up delay-300">
+          <Button
+            onClick={onGetStarted}
+            size="lg"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground font-sans font-semibold px-8 h-12 text-sm tracking-wide rounded-sm"
+          >
+            {t.cta}
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+          <Button
+            onClick={onLearnMore}
+            size="lg"
+            variant="outline"
+            className="bg-transparent border-white/25 text-white hover:bg-white/10 hover:text-white hover:border-white/40 font-sans font-medium px-8 h-12 text-sm rounded-sm"
+          >
+            {t.secondary}
+          </Button>
+        </div>
+
+        {/* Stats bar */}
+        <div className="w-full max-w-2xl grid grid-cols-2 md:grid-cols-4 animate-fade-in-up delay-400">
+          {t.stats.map((stat, i) => (
+            <div
+              key={i}
+              className="px-6 py-5 text-center border-r border-b border-white/10 last:border-r-0 [&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:border-r md:[&:nth-child(n+3)]:border-b-0"
+            >
+              <div className="font-serif text-3xl font-bold text-accent mb-1">{stat.value}</div>
+              <div className="font-sans text-white/50 text-[11px] font-medium uppercase tracking-widest">
+                {stat.label}
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+
+      {/* Scroll cue */}
+      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
+        <ChevronDown className="h-6 w-6" />
+      </div>
+    </section>
   );
 };
