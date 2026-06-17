@@ -103,8 +103,24 @@ export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: Hero
           alt="Land registration"
           className="w-full h-full object-cover"
         />
-        {/* Dark overlay — deep forest green tint */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a1f0c]/96 via-[#0d2410]/92 to-[#162b0e]/88" />
+        {/* Dark overlay — deep forest green tint (inline style so the alpha
+            stops render reliably; Tailwind drops opacity on arbitrary-hex
+            gradient stops, which left the background washed-out). */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom right, rgba(8,26,10,0.94), rgba(11,33,14,0.90), rgba(18,38,12,0.88))",
+          }}
+        />
+        {/* Extra vignette to deepen contrast behind the centered text */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, rgba(5,18,7,0.55) 0%, rgba(5,18,7,0.15) 45%, rgba(5,18,7,0.5) 100%)",
+          }}
+        />
         {/* Subtle grid texture */}
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -119,14 +135,17 @@ export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: Hero
       <div className="relative z-10 container mx-auto px-5 sm:px-6 pt-24 sm:pt-28 pb-16 sm:pb-20 flex flex-col items-center text-center">
         {/* Badge */}
         <div className="mb-6 sm:mb-8 animate-fade-in">
-          <span className="inline-flex items-center gap-2 bg-white/8 backdrop-blur-sm border border-white/15 text-white/80 text-[10px] sm:text-xs font-sans font-medium tracking-widest uppercase px-4 sm:px-5 py-2 sm:py-2.5 rounded-full">
+          <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/25 text-white/95 text-[10px] sm:text-xs font-sans font-medium tracking-widest uppercase px-4 sm:px-5 py-2 sm:py-2.5 rounded-full">
             <Shield className="h-3.5 w-3.5 text-accent shrink-0" />
             {t.badge}
           </span>
         </div>
 
         {/* Heading */}
-        <h1 className="font-serif text-[2.5rem] leading-[1.1] sm:text-6xl md:text-7xl lg:text-[88px] font-bold text-white sm:leading-[1.08] tracking-tight mb-5 sm:mb-6 animate-fade-in-up">
+        <h1
+          className="font-serif text-[2.5rem] leading-[1.1] sm:text-6xl md:text-7xl lg:text-[88px] font-bold text-white sm:leading-[1.08] tracking-tight mb-5 sm:mb-6 animate-fade-in-up"
+          style={{ textShadow: "0 2px 20px rgba(0,0,0,0.45)" }}
+        >
           {t.line1}
           <br />
           {t.line2}
@@ -135,7 +154,7 @@ export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: Hero
         </h1>
 
         {/* Description */}
-        <p className="font-sans text-white/65 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed mb-8 sm:mb-10 animate-fade-in-up delay-200">
+        <p className="font-sans text-white/85 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed mb-8 sm:mb-10 animate-fade-in-up delay-200">
           {t.description}
         </p>
 
@@ -167,7 +186,7 @@ export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: Hero
               className="px-3 sm:px-6 py-4 sm:py-5 text-center border-r border-b border-white/10 last:border-r-0 [&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:border-r md:[&:nth-child(n+3)]:border-b-0"
             >
               <div className="font-serif text-2xl sm:text-3xl font-bold text-accent mb-1">{stat.value}</div>
-              <div className="font-sans text-white/50 text-[10px] sm:text-[11px] font-medium uppercase tracking-widest">
+              <div className="font-sans text-white/70 text-[10px] sm:text-[11px] font-medium uppercase tracking-widest">
                 {stat.label}
               </div>
             </div>
