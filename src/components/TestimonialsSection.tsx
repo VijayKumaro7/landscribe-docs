@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 interface TestimonialsSectionProps {
   currentLanguage: string;
@@ -121,7 +122,7 @@ export const TestimonialsSection = ({ currentLanguage }: TestimonialsSectionProp
     <section id="testimonials" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-16">
           <p className="font-sans text-accent font-semibold text-xs uppercase tracking-widest mb-4">
             {t.eyebrow}
           </p>
@@ -131,14 +132,15 @@ export const TestimonialsSection = ({ currentLanguage }: TestimonialsSectionProp
           <p className="font-sans text-muted-foreground text-lg leading-relaxed">
             {t.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         {/* Testimonial cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {t.testimonials.map((item, i) => (
-            <div
+            <Reveal
               key={i}
-              className="bg-card border border-border p-8 flex flex-col hover-lift"
+              delay={i * 110}
+              className="bg-card border border-border p-8 flex flex-col h-full hover-lift"
             >
               <Quote className="h-7 w-7 text-accent/40 mb-5 shrink-0" />
               <p className="font-sans text-foreground/80 text-sm leading-relaxed flex-1 mb-8 italic">
@@ -155,7 +157,7 @@ export const TestimonialsSection = ({ currentLanguage }: TestimonialsSectionProp
                   <p className="font-sans text-muted-foreground text-xs">{item.role} · {item.location}</p>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

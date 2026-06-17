@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Reveal } from "./Reveal";
 import { useToast } from "@/hooks/use-toast";
 
 interface ContactSectionProps {
@@ -113,7 +114,7 @@ export const ContactSection = ({ currentLanguage }: ContactSectionProps) => {
     <section id="contact" className="py-24 bg-muted/30">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-16">
           <p className="font-sans text-accent font-semibold text-xs uppercase tracking-widest mb-4">
             {t.eyebrow}
           </p>
@@ -123,11 +124,11 @@ export const ContactSection = ({ currentLanguage }: ContactSectionProps) => {
           <p className="font-sans text-muted-foreground text-lg leading-relaxed">
             {t.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
           {/* Form */}
-          <div className="lg:col-span-3 bg-card border border-border p-8">
+          <Reveal className="lg:col-span-3 bg-card border border-border p-8">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
@@ -179,10 +180,10 @@ export const ContactSection = ({ currentLanguage }: ContactSectionProps) => {
                 {t.form.submit}
               </Button>
             </form>
-          </div>
+          </Reveal>
 
           {/* Contact info */}
-          <div className="lg:col-span-2 space-y-4 flex flex-col justify-center">
+          <Reveal delay={120} className="lg:col-span-2 space-y-4 flex flex-col justify-center">
             {contactInfo.map(({ Icon, label, key }) => (
               <div key={key} className="bg-card border border-border p-6 flex items-start gap-4">
                 <div className="w-9 h-9 bg-primary/8 flex items-center justify-center shrink-0">
@@ -211,7 +212,7 @@ export const ContactSection = ({ currentLanguage }: ContactSectionProps) => {
                 ))}
               </ul>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

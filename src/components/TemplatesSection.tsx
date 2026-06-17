@@ -1,5 +1,6 @@
 import { Download, Star, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Reveal } from "./Reveal";
 import { useToast } from "@/hooks/use-toast";
 
 interface TemplatesSectionProps {
@@ -156,7 +157,7 @@ export const TemplatesSection = ({ currentLanguage }: TemplatesSectionProps) => 
     <section id="templates" className="py-24 bg-muted/40">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-16">
           <p className="font-sans text-accent font-semibold text-xs uppercase tracking-widest mb-4">
             {t.eyebrow}
           </p>
@@ -166,14 +167,15 @@ export const TemplatesSection = ({ currentLanguage }: TemplatesSectionProps) => 
           <p className="font-sans text-muted-foreground text-lg leading-relaxed">
             {t.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {t.templates.map((template, index) => (
-            <div
+            <Reveal
               key={index}
-              className="group bg-card border border-border flex flex-col hover-lift hover:border-primary/25 transition-colors"
+              delay={(index % 3) * 90}
+              className="group bg-card border border-border flex flex-col h-full hover-lift hover:border-primary/25"
             >
               {/* Top bar accent */}
               <div
@@ -240,7 +242,7 @@ export const TemplatesSection = ({ currentLanguage }: TemplatesSectionProps) => 
                   </Button>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

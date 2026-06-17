@@ -1,3 +1,5 @@
+import { Reveal } from "./Reveal";
+
 interface HowItWorksSectionProps {
   currentLanguage: string;
 }
@@ -77,17 +79,17 @@ export const HowItWorksSection = ({ currentLanguage }: HowItWorksSectionProps) =
     <section id="how-it-works" className="py-24 bg-primary text-primary-foreground">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-16">
           <p className="font-sans text-accent font-semibold text-xs uppercase tracking-widest mb-4">
             {t.eyebrow}
           </p>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mb-5">
             {t.title}
           </h2>
-          <p className="font-sans text-primary-foreground/65 text-lg leading-relaxed">
+          <p className="font-sans text-primary-foreground/70 text-lg leading-relaxed">
             {t.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 relative">
@@ -95,7 +97,7 @@ export const HowItWorksSection = ({ currentLanguage }: HowItWorksSectionProps) =
           <div className="hidden md:block absolute top-8 left-1/3 right-1/3 h-px bg-white/15 pointer-events-none" />
 
           {t.steps.map((step, i) => (
-            <div key={i} className="relative flex flex-col items-center text-center px-8 py-10 md:py-0">
+            <Reveal key={i} delay={i * 130} className="relative flex flex-col items-center text-center px-8 py-10 md:py-0">
               {/* Number circle */}
               <div className="relative mb-8">
                 <div className="w-16 h-16 border border-white/20 bg-white/5 flex items-center justify-center">
@@ -110,10 +112,10 @@ export const HowItWorksSection = ({ currentLanguage }: HowItWorksSectionProps) =
               <h3 className="font-serif text-2xl font-semibold text-primary-foreground mb-4">
                 {step.title}
               </h3>
-              <p className="font-sans text-primary-foreground/60 text-sm leading-relaxed max-w-xs">
+              <p className="font-sans text-primary-foreground/70 text-sm leading-relaxed max-w-xs">
                 {step.description}
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

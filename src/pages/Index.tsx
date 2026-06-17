@@ -231,10 +231,10 @@ const Index = () => {
 
           {/* Copyright row */}
           <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="font-sans text-primary-foreground/40 text-xs">
+            <p className="font-sans text-primary-foreground/55 text-xs">
               © {new Date().getFullYear()} {ft.copyright}
             </p>
-            <p className="font-sans text-primary-foreground/30 text-xs">
+            <p className="font-sans text-primary-foreground/45 text-xs">
               Made with care for Indian property owners 🇮🇳
             </p>
           </div>
