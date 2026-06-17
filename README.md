@@ -111,57 +111,6 @@ src/
 
 ---
 
-## Design System
-
-The app uses a custom CSS token system defined in `index.css` built around a **warm, professional legal theme**:
-
-- **Background** — Warm cream (`hsl(40, 30%, 96%)`)
-- **Primary** — Deep forest green (`hsl(125, 36%, 17%)`)
-- **Secondary** — Mid forest green (`hsl(125, 28%, 34%)`)
-- **Accent** — Warm gold (`hsl(40, 60%, 39%)`)
-- **Success** — Legal green (`hsl(142, 48%, 36%)`)
-
-Typography pairs **Playfair Display** (serif headings) with **Inter** (sans body). A full dark theme is also defined via the `.dark` token set.
-
-Custom utilities include `.hover-lift`, `.reveal` (scroll-triggered fade/slide-in), `.section-divider`, and keyframe animations (`fadeInUp`, `fadeIn`) for polished motion. Smooth scrolling with navbar-aware `scroll-padding` and `prefers-reduced-motion` support is handled in the base layer.
-
----
-
-## Getting Started
-
-### Prerequisites
-- Node.js (v18+ recommended)
-- npm
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/vijaykumaro7/landscribe-docs.git
-
-# Navigate into the project
-cd landscribe-docs
-
-# Install dependencies
-npm install
-
-# Start the dev server
-npm run dev
-```
-
-The app will be available at `http://localhost:8080` by default.
-
----
-
-## Deployment
-
-This project is hosted and deployed via [Lovable](https://lovable.dev/projects/b4edeb17-f281-4fa6-a7d6-fbf59c100469).
-
-To publish: open the Lovable project → **Share** → **Publish**.
-
-To connect a custom domain: **Project → Settings → Domains → Connect Domain**.
-
----
 
 ## Target Users
 
