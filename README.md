@@ -6,7 +6,13 @@
 
 ## Preview
 
-![LandDocs UI Preview](docs/preview.png)
+**Desktop**
+
+![LandDocs — desktop view](docs/preview-desktop.png)
+
+**Mobile**
+
+<img src="docs/preview-mobile.png" alt="LandDocs — mobile view" width="320" />
 
 ---
 
@@ -79,9 +85,16 @@ The form includes name, email, phone, service type, and message fields with basi
 src/
 ├── assets/               # Static images (hero background)
 ├── components/
-│   ├── HeroSection.tsx   # Landing hero with CTA and language switcher
+│   ├── Navbar.tsx            # Sticky top nav with scroll-spy + mobile drawer
+│   ├── HeroSection.tsx       # Landing hero with CTA and stats
+│   ├── FeaturesSection.tsx   # "Why LandDocs" feature cards
 │   ├── TemplatesSection.tsx  # Document template cards grid
+│   ├── HowItWorksSection.tsx # Three-step process
+│   ├── TestimonialsSection.tsx # Client testimonial cards
 │   ├── ContactSection.tsx    # Inquiry form + contact info
+│   ├── SectionNav.tsx        # Right-rail section dot navigation
+│   ├── ScrollProgress.tsx    # Top reading-progress bar
+│   ├── Reveal.tsx            # Scroll-triggered reveal wrapper
 │   ├── LanguageSelector.tsx  # Dropdown to switch UI language
 │   └── ui/               # shadcn/ui base components
 ├── hooks/
@@ -100,14 +113,17 @@ src/
 
 ## Design System
 
-The app uses a custom CSS token system defined in `index.css` built around a **professional legal theme**:
+The app uses a custom CSS token system defined in `index.css` built around a **warm, professional legal theme**:
 
-- **Primary** — Deep professional blue (`hsl(215, 85%, 25%)`)
-- **Secondary** — Elegant teal (`hsl(185, 70%, 45%)`)
-- **Accent** — Trust gold (`hsl(45, 95%, 55%)`)
-- **Success** — Legal green (`hsl(145, 65%, 40%)`)
+- **Background** — Warm cream (`hsl(40, 30%, 96%)`)
+- **Primary** — Deep forest green (`hsl(125, 36%, 17%)`)
+- **Secondary** — Mid forest green (`hsl(125, 28%, 34%)`)
+- **Accent** — Warm gold (`hsl(40, 60%, 39%)`)
+- **Success** — Legal green (`hsl(142, 48%, 36%)`)
 
-Custom utilities include `.bg-gradient-hero`, `.shadow-card`, `.hover-lift`, and keyframe animations (`fadeInUp`, `slideInRight`, `float`) for polished motion.
+Typography pairs **Playfair Display** (serif headings) with **Inter** (sans body). A full dark theme is also defined via the `.dark` token set.
+
+Custom utilities include `.hover-lift`, `.reveal` (scroll-triggered fade/slide-in), `.section-divider`, and keyframe animations (`fadeInUp`, `fadeIn`) for polished motion. Smooth scrolling with navbar-aware `scroll-padding` and `prefers-reduced-motion` support is handled in the base layer.
 
 ---
 
