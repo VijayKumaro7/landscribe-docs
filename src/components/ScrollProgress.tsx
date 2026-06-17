@@ -17,8 +17,8 @@ export const ScrollProgress = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-[70] h-[3px] bg-transparent pointer-events-none">
       <div
-        className="h-full bg-accent transition-none origin-left"
-        style={{ width: `${progress}%` }}
+        className="h-full bg-accent origin-left"
+        style={{ width: `${progress}%`, transition: "width 80ms linear" }}
       />
     </div>
   );

@@ -1,4 +1,5 @@
 import { ShieldCheck, FileText, Zap, Globe } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 interface FeaturesSectionProps {
   currentLanguage: string;
@@ -103,40 +104,39 @@ export const FeaturesSection = ({ currentLanguage }: FeaturesSectionProps) => {
   const t = translations[currentLanguage as keyof typeof translations] || translations.en;
 
   return (
-    <section id="features" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="features" className="py-16 sm:py-20 md:py-24 bg-background">
+      <div className="container mx-auto px-5 sm:px-6">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
           <p className="font-sans text-accent font-semibold text-xs uppercase tracking-widest mb-4">
             {t.eyebrow}
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-5">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-5">
             {t.title}
           </h2>
-          <p className="font-sans text-muted-foreground text-lg leading-relaxed">
+          <p className="font-sans text-muted-foreground text-base sm:text-lg leading-relaxed">
             {t.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         {/* Feature cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {t.features.map((feature, i) => {
             const Icon = feature.icon;
             return (
-              <div
-                key={i}
-                className="group bg-card border border-border p-7 hover-lift hover:border-primary/30 transition-colors"
-              >
-                <div className="w-11 h-11 bg-primary/8 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
-                  <Icon className="h-5 w-5 text-primary" />
+              <Reveal key={i} delay={i * 100}>
+                <div className="group bg-card border border-border p-7 h-full hover-lift hover:border-primary/30">
+                  <div className="w-11 h-11 bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/[0.14] transition-colors">
+                    <Icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-serif text-lg font-semibold text-foreground mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="font-sans text-muted-foreground text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="font-serif text-lg font-semibold text-foreground mb-3">
-                  {feature.title}
-                </h3>
-                <p className="font-sans text-muted-foreground text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+              </Reveal>
             );
           })}
         </div>

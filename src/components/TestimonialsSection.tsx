@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 interface TestimonialsSectionProps {
   currentLanguage: string;
@@ -118,27 +119,28 @@ export const TestimonialsSection = ({ currentLanguage }: TestimonialsSectionProp
   const t = translations[currentLanguage as keyof typeof translations] || translations.en;
 
   return (
-    <section id="testimonials" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="testimonials" className="py-16 sm:py-20 md:py-24 bg-background">
+      <div className="container mx-auto px-5 sm:px-6">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
           <p className="font-sans text-accent font-semibold text-xs uppercase tracking-widest mb-4">
             {t.eyebrow}
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-5">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-5">
             {t.title}
           </h2>
-          <p className="font-sans text-muted-foreground text-lg leading-relaxed">
+          <p className="font-sans text-muted-foreground text-base sm:text-lg leading-relaxed">
             {t.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         {/* Testimonial cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {t.testimonials.map((item, i) => (
-            <div
+            <Reveal
               key={i}
-              className="bg-card border border-border p-8 flex flex-col hover-lift"
+              delay={i * 110}
+              className="bg-card border border-border p-6 sm:p-8 flex flex-col h-full hover-lift sm:last:col-span-2 lg:last:col-span-1"
             >
               <Quote className="h-7 w-7 text-accent/40 mb-5 shrink-0" />
               <p className="font-sans text-foreground/80 text-sm leading-relaxed flex-1 mb-8 italic">
@@ -155,7 +157,7 @@ export const TestimonialsSection = ({ currentLanguage }: TestimonialsSectionProp
                   <p className="font-sans text-muted-foreground text-xs">{item.role} · {item.location}</p>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -116,17 +116,17 @@ export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: Hero
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-28 pb-20 flex flex-col items-center text-center">
+      <div className="relative z-10 container mx-auto px-5 sm:px-6 pt-24 sm:pt-28 pb-16 sm:pb-20 flex flex-col items-center text-center">
         {/* Badge */}
-        <div className="mb-8 animate-fade-in">
-          <span className="inline-flex items-center gap-2 bg-white/8 backdrop-blur-sm border border-white/15 text-white/80 text-xs font-sans font-medium tracking-widest uppercase px-5 py-2.5 rounded-full">
+        <div className="mb-6 sm:mb-8 animate-fade-in">
+          <span className="inline-flex items-center gap-2 bg-white/8 backdrop-blur-sm border border-white/15 text-white/80 text-[10px] sm:text-xs font-sans font-medium tracking-widest uppercase px-4 sm:px-5 py-2 sm:py-2.5 rounded-full">
             <Shield className="h-3.5 w-3.5 text-accent shrink-0" />
             {t.badge}
           </span>
         </div>
 
         {/* Heading */}
-        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[88px] font-bold text-white leading-[1.08] tracking-tight mb-6 animate-fade-in-up">
+        <h1 className="font-serif text-[2.5rem] leading-[1.1] sm:text-6xl md:text-7xl lg:text-[88px] font-bold text-white sm:leading-[1.08] tracking-tight mb-5 sm:mb-6 animate-fade-in-up">
           {t.line1}
           <br />
           {t.line2}
@@ -135,16 +135,16 @@ export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: Hero
         </h1>
 
         {/* Description */}
-        <p className="font-sans text-white/65 text-lg md:text-xl max-w-2xl leading-relaxed mb-10 animate-fade-in-up delay-200">
+        <p className="font-sans text-white/65 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed mb-8 sm:mb-10 animate-fade-in-up delay-200">
           {t.description}
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-20 animate-fade-in-up delay-300">
+        <div className="flex flex-col sm:flex-row gap-3 mb-14 sm:mb-20 w-full sm:w-auto max-w-xs sm:max-w-none animate-fade-in-up delay-300">
           <Button
             onClick={onGetStarted}
             size="lg"
-            className="bg-accent hover:bg-accent/90 text-accent-foreground font-sans font-semibold px-8 h-12 text-sm tracking-wide rounded-sm"
+            className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground font-sans font-semibold px-8 h-12 text-sm tracking-wide rounded-sm"
           >
             {t.cta}
             <ArrowRight className="ml-2 h-4 w-4" />
@@ -153,7 +153,7 @@ export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: Hero
             onClick={onLearnMore}
             size="lg"
             variant="outline"
-            className="bg-transparent border-white/25 text-white hover:bg-white/10 hover:text-white hover:border-white/40 font-sans font-medium px-8 h-12 text-sm rounded-sm"
+            className="w-full sm:w-auto bg-transparent border-white/25 text-white hover:bg-white/10 hover:text-white hover:border-white/40 font-sans font-medium px-8 h-12 text-sm rounded-sm"
           >
             {t.secondary}
           </Button>
@@ -164,10 +164,10 @@ export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: Hero
           {t.stats.map((stat, i) => (
             <div
               key={i}
-              className="px-6 py-5 text-center border-r border-b border-white/10 last:border-r-0 [&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:border-r md:[&:nth-child(n+3)]:border-b-0"
+              className="px-3 sm:px-6 py-4 sm:py-5 text-center border-r border-b border-white/10 last:border-r-0 [&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:border-r md:[&:nth-child(n+3)]:border-b-0"
             >
-              <div className="font-serif text-3xl font-bold text-accent mb-1">{stat.value}</div>
-              <div className="font-sans text-white/50 text-[11px] font-medium uppercase tracking-widest">
+              <div className="font-serif text-2xl sm:text-3xl font-bold text-accent mb-1">{stat.value}</div>
+              <div className="font-sans text-white/50 text-[10px] sm:text-[11px] font-medium uppercase tracking-widest">
                 {stat.label}
               </div>
             </div>
