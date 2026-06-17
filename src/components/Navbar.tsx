@@ -75,7 +75,7 @@ export const Navbar = ({ currentLanguage, onLanguageChange, onGetStarted }: Navb
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBase}`}>
-      <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="container mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
 
         {/* Logo */}
         <div className="flex items-center gap-2.5 cursor-pointer" onClick={() => scrollTo("hero")}>
@@ -88,7 +88,7 @@ export const Navbar = ({ currentLanguage, onLanguageChange, onGetStarted }: Navb
         </div>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden md:flex items-center gap-5 lg:gap-7">
           {NAV_LINKS.map(({ key, id }) => {
             const isActive = activeKey === key;
             return (
@@ -135,7 +135,7 @@ export const Navbar = ({ currentLanguage, onLanguageChange, onGetStarted }: Navb
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-b border-border px-6 py-5 space-y-1">
+        <div className="md:hidden bg-white border-b border-border px-5 sm:px-6 py-5 space-y-1">
           {NAV_LINKS.map(({ key, id }) => {
             const isActive = activeKey === key;
             return (

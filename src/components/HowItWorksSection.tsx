@@ -76,17 +76,17 @@ export const HowItWorksSection = ({ currentLanguage }: HowItWorksSectionProps) =
   const t = translations[currentLanguage as keyof typeof translations] || translations.en;
 
   return (
-    <section id="how-it-works" className="py-24 bg-primary text-primary-foreground">
-      <div className="container mx-auto px-6">
+    <section id="how-it-works" className="py-16 sm:py-20 md:py-24 bg-primary text-primary-foreground">
+      <div className="container mx-auto px-5 sm:px-6">
         {/* Header */}
-        <Reveal className="text-center max-w-2xl mx-auto mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
           <p className="font-sans text-accent font-semibold text-xs uppercase tracking-widest mb-4">
             {t.eyebrow}
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mb-5">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary-foreground mb-4 sm:mb-5">
             {t.title}
           </h2>
-          <p className="font-sans text-primary-foreground/70 text-lg leading-relaxed">
+          <p className="font-sans text-primary-foreground/70 text-base sm:text-lg leading-relaxed">
             {t.subtitle}
           </p>
         </Reveal>
@@ -97,7 +97,7 @@ export const HowItWorksSection = ({ currentLanguage }: HowItWorksSectionProps) =
           <div className="hidden md:block absolute top-8 left-1/3 right-1/3 h-px bg-white/15 pointer-events-none" />
 
           {t.steps.map((step, i) => (
-            <Reveal key={i} delay={i * 130} className="relative flex flex-col items-center text-center px-8 py-10 md:py-0">
+            <Reveal key={i} delay={i * 130} className="relative flex flex-col items-center text-center px-6 sm:px-8 py-10 md:py-0">
               {/* Number circle */}
               <div className="relative mb-8">
                 <div className="w-16 h-16 border border-white/20 bg-white/5 flex items-center justify-center">

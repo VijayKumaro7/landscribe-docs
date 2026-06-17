@@ -152,11 +152,11 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 py-14 border-b border-white/10">
+        <div className="container mx-auto px-5 sm:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 py-12 sm:py-14 border-b border-white/10">
 
             {/* Brand */}
-            <div className="md:col-span-1">
+            <div className="col-span-2 md:col-span-1">
               <button
                 onClick={() => scrollTo("hero")}
                 className="flex items-center gap-2.5 mb-4 group"

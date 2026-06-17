@@ -154,23 +154,23 @@ export const TemplatesSection = ({ currentLanguage }: TemplatesSectionProps) => 
   };
 
   return (
-    <section id="templates" className="py-24 bg-muted/40">
-      <div className="container mx-auto px-6">
+    <section id="templates" className="py-16 sm:py-20 md:py-24 bg-muted/40">
+      <div className="container mx-auto px-5 sm:px-6">
         {/* Header */}
-        <Reveal className="text-center max-w-2xl mx-auto mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
           <p className="font-sans text-accent font-semibold text-xs uppercase tracking-widest mb-4">
             {t.eyebrow}
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-5">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-5">
             {t.title}
           </h2>
-          <p className="font-sans text-muted-foreground text-lg leading-relaxed">
+          <p className="font-sans text-muted-foreground text-base sm:text-lg leading-relaxed">
             {t.subtitle}
           </p>
         </Reveal>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {t.templates.map((template, index) => (
             <Reveal
               key={index}
