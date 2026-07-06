@@ -1,3 +1,5 @@
+@import "./fonts.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -123,6 +125,22 @@
 }
 
 @layer utilities {
+  /* Skip-to-content link: visually hidden until keyboard-focused */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    z-index: 100;
+    padding: 0.6rem 1rem;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  .skip-link:focus {
+    left: 0.75rem;
+    top: 0.75rem;
+  }
+
   .font-serif {
     font-family: 'Playfair Display', Georgia, serif;
   }

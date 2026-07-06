@@ -8,7 +8,9 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "fetch:fonts": "bash scripts/fetch-fonts.sh",
+    "generate:pdfs": "node scripts/generate-demo-pdfs.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -74,6 +76,8 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^15.15.0",
     "lovable-tagger": "^1.1.9",
+    "pdf-lib": "^1.17.1",
+    "playwright-core": "^1.61.1",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3",

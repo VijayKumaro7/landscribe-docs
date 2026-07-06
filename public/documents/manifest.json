@@ -1,0 +1,482 @@
+[
+  {
+    "id": "sale-deed-en",
+    "type": "sale-deed",
+    "language": "en",
+    "title": "SALE DEED",
+    "file": "/documents/sale-deed-en.pdf",
+    "pages": 3,
+    "sizeKB": 211,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "sale-deed-hi",
+    "type": "sale-deed",
+    "language": "hi",
+    "title": "बिक्री विलेख",
+    "file": "/documents/sale-deed-hi.pdf",
+    "pages": 3,
+    "sizeKB": 289,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "sale-deed-kn",
+    "type": "sale-deed",
+    "language": "kn",
+    "title": "ಮಾರಾಟ ಪತ್ರ",
+    "file": "/documents/sale-deed-kn.pdf",
+    "pages": 3,
+    "sizeKB": 556,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "sale-deed-mr",
+    "type": "sale-deed",
+    "language": "mr",
+    "title": "विक्री पत्र (खरेदीखत)",
+    "file": "/documents/sale-deed-mr.pdf",
+    "pages": 3,
+    "sizeKB": 309,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "sale-deed-ta",
+    "type": "sale-deed",
+    "language": "ta",
+    "title": "விற்பனைப் பத்திரம்",
+    "file": "/documents/sale-deed-ta.pdf",
+    "pages": 3,
+    "sizeKB": 326,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "sale-deed-te",
+    "type": "sale-deed",
+    "language": "te",
+    "title": "అమ్మకం పత్రం (విక్రయ దస్తావేజు)",
+    "file": "/documents/sale-deed-te.pdf",
+    "pages": 3,
+    "sizeKB": 591,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "gift-deed-en",
+    "type": "gift-deed",
+    "language": "en",
+    "title": "GIFT DEED",
+    "file": "/documents/gift-deed-en.pdf",
+    "pages": 3,
+    "sizeKB": 210,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "gift-deed-hi",
+    "type": "gift-deed",
+    "language": "hi",
+    "title": "उपहार विलेख (दान पत्र)",
+    "file": "/documents/gift-deed-hi.pdf",
+    "pages": 2,
+    "sizeKB": 284,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "gift-deed-kn",
+    "type": "gift-deed",
+    "language": "kn",
+    "title": "ಉಡುಗೊರೆ ಪತ್ರ (ದಾನ ಪತ್ರ)",
+    "file": "/documents/gift-deed-kn.pdf",
+    "pages": 3,
+    "sizeKB": 565,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "gift-deed-mr",
+    "type": "gift-deed",
+    "language": "mr",
+    "title": "भेट पत्र (दानपत्र)",
+    "file": "/documents/gift-deed-mr.pdf",
+    "pages": 2,
+    "sizeKB": 308,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "gift-deed-ta",
+    "type": "gift-deed",
+    "language": "ta",
+    "title": "தானப் பத்திரம்",
+    "file": "/documents/gift-deed-ta.pdf",
+    "pages": 3,
+    "sizeKB": 322,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "gift-deed-te",
+    "type": "gift-deed",
+    "language": "te",
+    "title": "బహుమతి పత్రం (దాన పత్రం)",
+    "file": "/documents/gift-deed-te.pdf",
+    "pages": 3,
+    "sizeKB": 576,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "lease-deed-en",
+    "type": "lease-deed",
+    "language": "en",
+    "title": "LEASE DEED",
+    "file": "/documents/lease-deed-en.pdf",
+    "pages": 3,
+    "sizeKB": 212,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "lease-deed-hi",
+    "type": "lease-deed",
+    "language": "hi",
+    "title": "पट्टा विलेख",
+    "file": "/documents/lease-deed-hi.pdf",
+    "pages": 3,
+    "sizeKB": 289,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "lease-deed-kn",
+    "type": "lease-deed",
+    "language": "kn",
+    "title": "ಬಾಡಿಗೆ (ಗುತ್ತಿಗೆ) ಪತ್ರ",
+    "file": "/documents/lease-deed-kn.pdf",
+    "pages": 3,
+    "sizeKB": 559,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "lease-deed-mr",
+    "type": "lease-deed",
+    "language": "mr",
+    "title": "भाडे पत्र (पट्टा)",
+    "file": "/documents/lease-deed-mr.pdf",
+    "pages": 3,
+    "sizeKB": 312,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "lease-deed-ta",
+    "type": "lease-deed",
+    "language": "ta",
+    "title": "குத்தகைப் பத்திரம்",
+    "file": "/documents/lease-deed-ta.pdf",
+    "pages": 3,
+    "sizeKB": 330,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "lease-deed-te",
+    "type": "lease-deed",
+    "language": "te",
+    "title": "లీజు పత్రం",
+    "file": "/documents/lease-deed-te.pdf",
+    "pages": 3,
+    "sizeKB": 602,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "partition-deed-en",
+    "type": "partition-deed",
+    "language": "en",
+    "title": "PARTITION DEED",
+    "file": "/documents/partition-deed-en.pdf",
+    "pages": 3,
+    "sizeKB": 209,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "partition-deed-hi",
+    "type": "partition-deed",
+    "language": "hi",
+    "title": "विभाजन विलेख",
+    "file": "/documents/partition-deed-hi.pdf",
+    "pages": 2,
+    "sizeKB": 287,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "partition-deed-kn",
+    "type": "partition-deed",
+    "language": "kn",
+    "title": "ವಿಭಾಗ ಪತ್ರ",
+    "file": "/documents/partition-deed-kn.pdf",
+    "pages": 3,
+    "sizeKB": 557,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "partition-deed-mr",
+    "type": "partition-deed",
+    "language": "mr",
+    "title": "फाळणी पत्र (वाटप पत्र)",
+    "file": "/documents/partition-deed-mr.pdf",
+    "pages": 2,
+    "sizeKB": 311,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "partition-deed-ta",
+    "type": "partition-deed",
+    "language": "ta",
+    "title": "பாகப்பிரிவினைப் பத்திரம்",
+    "file": "/documents/partition-deed-ta.pdf",
+    "pages": 3,
+    "sizeKB": 317,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "partition-deed-te",
+    "type": "partition-deed",
+    "language": "te",
+    "title": "విభజన పత్రం",
+    "file": "/documents/partition-deed-te.pdf",
+    "pages": 3,
+    "sizeKB": 571,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "mortgage-deed-en",
+    "type": "mortgage-deed",
+    "language": "en",
+    "title": "MORTGAGE DEED",
+    "file": "/documents/mortgage-deed-en.pdf",
+    "pages": 3,
+    "sizeKB": 209,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "mortgage-deed-hi",
+    "type": "mortgage-deed",
+    "language": "hi",
+    "title": "बंधक विलेख",
+    "file": "/documents/mortgage-deed-hi.pdf",
+    "pages": 3,
+    "sizeKB": 290,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "mortgage-deed-kn",
+    "type": "mortgage-deed",
+    "language": "kn",
+    "title": "ಅಡಮಾನ ಪತ್ರ",
+    "file": "/documents/mortgage-deed-kn.pdf",
+    "pages": 3,
+    "sizeKB": 567,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "mortgage-deed-mr",
+    "type": "mortgage-deed",
+    "language": "mr",
+    "title": "गहाण पत्र",
+    "file": "/documents/mortgage-deed-mr.pdf",
+    "pages": 3,
+    "sizeKB": 314,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "mortgage-deed-ta",
+    "type": "mortgage-deed",
+    "language": "ta",
+    "title": "அடமானப் பத்திரம்",
+    "file": "/documents/mortgage-deed-ta.pdf",
+    "pages": 3,
+    "sizeKB": 332,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "mortgage-deed-te",
+    "type": "mortgage-deed",
+    "language": "te",
+    "title": "తనఖా పత్రం",
+    "file": "/documents/mortgage-deed-te.pdf",
+    "pages": 3,
+    "sizeKB": 589,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "power-of-attorney-en",
+    "type": "power-of-attorney",
+    "language": "en",
+    "title": "GENERAL POWER OF ATTORNEY",
+    "file": "/documents/power-of-attorney-en.pdf",
+    "pages": 3,
+    "sizeKB": 208,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "power-of-attorney-hi",
+    "type": "power-of-attorney",
+    "language": "hi",
+    "title": "सामान्य मुख्तारनामा",
+    "file": "/documents/power-of-attorney-hi.pdf",
+    "pages": 3,
+    "sizeKB": 293,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "power-of-attorney-kn",
+    "type": "power-of-attorney",
+    "language": "kn",
+    "title": "ಸಾಮಾನ್ಯ ಅಧಿಕಾರ ಪತ್ರ",
+    "file": "/documents/power-of-attorney-kn.pdf",
+    "pages": 3,
+    "sizeKB": 572,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "power-of-attorney-mr",
+    "type": "power-of-attorney",
+    "language": "mr",
+    "title": "सर्वसाधारण मुख्तारनामा",
+    "file": "/documents/power-of-attorney-mr.pdf",
+    "pages": 2,
+    "sizeKB": 317,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "power-of-attorney-ta",
+    "type": "power-of-attorney",
+    "language": "ta",
+    "title": "பொது அதிகாரப் பத்திரம்",
+    "file": "/documents/power-of-attorney-ta.pdf",
+    "pages": 3,
+    "sizeKB": 327,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "power-of-attorney-te",
+    "type": "power-of-attorney",
+    "language": "te",
+    "title": "సాధారణ పవర్ ఆఫ్ అటార్నీ",
+    "file": "/documents/power-of-attorney-te.pdf",
+    "pages": 3,
+    "sizeKB": 605,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "rental-agreement-en",
+    "type": "rental-agreement",
+    "language": "en",
+    "title": "RENTAL AGREEMENT",
+    "file": "/documents/rental-agreement-en.pdf",
+    "pages": 3,
+    "sizeKB": 210,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "rental-agreement-hi",
+    "type": "rental-agreement",
+    "language": "hi",
+    "title": "किराया अनुबंध",
+    "file": "/documents/rental-agreement-hi.pdf",
+    "pages": 2,
+    "sizeKB": 288,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "rental-agreement-kn",
+    "type": "rental-agreement",
+    "language": "kn",
+    "title": "ಬಾಡಿಗೆ ಒಪ್ಪಂದ",
+    "file": "/documents/rental-agreement-kn.pdf",
+    "pages": 3,
+    "sizeKB": 566,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "rental-agreement-mr",
+    "type": "rental-agreement",
+    "language": "mr",
+    "title": "भाडेकरार",
+    "file": "/documents/rental-agreement-mr.pdf",
+    "pages": 2,
+    "sizeKB": 313,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "rental-agreement-ta",
+    "type": "rental-agreement",
+    "language": "ta",
+    "title": "வாடகை ஒப்பந்தம்",
+    "file": "/documents/rental-agreement-ta.pdf",
+    "pages": 3,
+    "sizeKB": 330,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "rental-agreement-te",
+    "type": "rental-agreement",
+    "language": "te",
+    "title": "అద్దె ఒప్పందం",
+    "file": "/documents/rental-agreement-te.pdf",
+    "pages": 3,
+    "sizeKB": 605,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "affidavit-en",
+    "type": "affidavit",
+    "language": "en",
+    "title": "AFFIDAVIT",
+    "file": "/documents/affidavit-en.pdf",
+    "pages": 2,
+    "sizeKB": 196,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "affidavit-hi",
+    "type": "affidavit",
+    "language": "hi",
+    "title": "शपथ पत्र",
+    "file": "/documents/affidavit-hi.pdf",
+    "pages": 2,
+    "sizeKB": 274,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "affidavit-kn",
+    "type": "affidavit",
+    "language": "kn",
+    "title": "ಪ್ರಮಾಣ ಪತ್ರ",
+    "file": "/documents/affidavit-kn.pdf",
+    "pages": 2,
+    "sizeKB": 507,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "affidavit-mr",
+    "type": "affidavit",
+    "language": "mr",
+    "title": "प्रतिज्ञापत्र",
+    "file": "/documents/affidavit-mr.pdf",
+    "pages": 2,
+    "sizeKB": 287,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "affidavit-ta",
+    "type": "affidavit",
+    "language": "ta",
+    "title": "பிரமாணப் பத்திரம்",
+    "file": "/documents/affidavit-ta.pdf",
+    "pages": 3,
+    "sizeKB": 305,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "affidavit-te",
+    "type": "affidavit",
+    "language": "te",
+    "title": "ప్రమాణ పత్రం (అఫిడవిట్)",
+    "file": "/documents/affidavit-te.pdf",
+    "pages": 2,
+    "sizeKB": 539,
+    "generatedAt": "2026-01-15T00:00:00.000Z"
+  }
+]
