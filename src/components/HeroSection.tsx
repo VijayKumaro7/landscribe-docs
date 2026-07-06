@@ -1,14 +1,25 @@
 import { ArrowRight, ChevronDown, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
+import { useTranslation, type Translations } from "@/i18n";
 
 interface HeroSectionProps {
-  currentLanguage: string;
   onGetStarted: () => void;
   onLearnMore: () => void;
 }
 
-const translations = {
+interface HeroStrings {
+  badge: string;
+  line1: string;
+  line2: string;
+  accent: string;
+  description: string;
+  cta: string;
+  secondary: string;
+  stats: { value: string; label: string }[];
+}
+
+const translations: Translations<HeroStrings> = {
   en: {
     badge: "Trusted Land Documentation Platform",
     line1: "Secure Land",
@@ -20,7 +31,7 @@ const translations = {
     secondary: "How It Works",
     stats: [
       { value: "10K+", label: "Documents Processed" },
-      { value: "5", label: "Languages" },
+      { value: "6", label: "Languages" },
       { value: "100%", label: "Legal Compliance" },
       { value: "24/7", label: "Expert Support" },
     ],
@@ -36,7 +47,7 @@ const translations = {
     secondary: "कैसे काम करता है",
     stats: [
       { value: "10K+", label: "दस्तावेज़" },
-      { value: "5", label: "भाषाएं" },
+      { value: "6", label: "भाषाएं" },
       { value: "100%", label: "कानूनी" },
       { value: "24/7", label: "सहायता" },
     ],
@@ -52,7 +63,7 @@ const translations = {
     secondary: "ಹೇಗೆ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತದೆ",
     stats: [
       { value: "10K+", label: "ದಾಖಲೆಗಳು" },
-      { value: "5", label: "ಭಾಷೆಗಳು" },
+      { value: "6", label: "ಭಾಷೆಗಳು" },
       { value: "100%", label: "ಕಾನೂನು" },
       { value: "24/7", label: "ಬೆಂಬಲ" },
     ],
@@ -68,9 +79,25 @@ const translations = {
     secondary: "कसे काम करते",
     stats: [
       { value: "10K+", label: "दस्तऐवज" },
-      { value: "5", label: "भाषा" },
+      { value: "6", label: "भाषा" },
       { value: "100%", label: "कायदेशीर" },
       { value: "24/7", label: "मदत" },
+    ],
+  },
+  ta: {
+    badge: "நம்பகமான நில ஆவணமாக்கல் தளம்",
+    line1: "பாதுகாப்பான நிலப்",
+    line2: "பதிவு",
+    accent: "எளிதாக்கப்பட்டது.",
+    description:
+      "இடைத்தரகர்கள் இல்லாமல் தொழில்முறை நிலப் பதிவு வார்ப்புருக்கள் மற்றும் வெளிப்படையான சட்டச் சேவைகள்.",
+    cta: "வார்ப்புருக்களைப் பார்க்க",
+    secondary: "எப்படி செயல்படுகிறது",
+    stats: [
+      { value: "10K+", label: "ஆவணங்கள்" },
+      { value: "6", label: "மொழிகள்" },
+      { value: "100%", label: "சட்டப்படி" },
+      { value: "24/7", label: "ஆதரவு" },
     ],
   },
   te: {
@@ -84,15 +111,15 @@ const translations = {
     secondary: "ఎలా పని చేస్తుంది",
     stats: [
       { value: "10K+", label: "పత్రాలు" },
-      { value: "5", label: "భాషలు" },
+      { value: "6", label: "భాషలు" },
       { value: "100%", label: "చట్టపరమైన" },
       { value: "24/7", label: "మద్దతు" },
     ],
   },
 };
 
-export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: HeroSectionProps) => {
-  const t = translations[currentLanguage as keyof typeof translations] || translations.en;
+export const HeroSection = ({ onGetStarted, onLearnMore }: HeroSectionProps) => {
+  const t = useTranslation(translations);
 
   return (
     <section id="hero" className="relative min-h-screen flex flex-col justify-center overflow-hidden">
@@ -100,7 +127,12 @@ export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: Hero
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Land registration"
+          alt=""
+          role="presentation"
+          width={1920}
+          height={1080}
+          loading="eager"
+          decoding="async"
           className="w-full h-full object-cover"
         />
         {/* Dark overlay — deep forest green tint (inline style so the alpha
@@ -136,7 +168,7 @@ export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: Hero
         {/* Badge */}
         <div className="mb-6 sm:mb-8 animate-fade-in">
           <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/25 text-white/95 text-[10px] sm:text-xs font-sans font-medium tracking-widest uppercase px-4 sm:px-5 py-2 sm:py-2.5 rounded-full">
-            <Shield className="h-3.5 w-3.5 text-accent shrink-0" />
+            <Shield className="h-3.5 w-3.5 text-accent shrink-0" aria-hidden="true" />
             {t.badge}
           </span>
         </div>
@@ -166,7 +198,7 @@ export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: Hero
             className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground font-sans font-semibold px-8 h-12 text-sm tracking-wide rounded-sm"
           >
             {t.cta}
-            <ArrowRight className="ml-2 h-4 w-4" />
+            <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
           </Button>
           <Button
             onClick={onLearnMore}
@@ -195,7 +227,7 @@ export const HeroSection = ({ currentLanguage, onGetStarted, onLearnMore }: Hero
       </div>
 
       {/* Scroll cue */}
-      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
+      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 text-white/30 animate-bounce" aria-hidden="true">
         <ChevronDown className="h-6 w-6" />
       </div>
     </section>

@@ -1,55 +1,77 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FileText, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "./LanguageSelector";
+import { ThemeToggle } from "./ThemeToggle";
+import { useTranslation, type Translations } from "@/i18n";
 
-interface NavbarProps {
-  currentLanguage: string;
-  onLanguageChange: (lang: string) => void;
-  onGetStarted: () => void;
+interface NavbarStrings {
+  home: string;
+  templates: string;
+  howItWorks: string;
+  library: string;
+  contact: string;
+  cta: string;
 }
 
-const navT = {
-  en: { home: "Home", templates: "Templates", howItWorks: "How It Works", contact: "Contact", cta: "Get Started" },
-  hi: { home: "होम", templates: "टेम्प्लेट", howItWorks: "कैसे काम करता है", contact: "संपर्क", cta: "शुरू करें" },
-  kn: { home: "ಮುಖ್ಯ", templates: "ಟೆಂಪ್ಲೇಟ್", howItWorks: "ಹೇಗೆ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತದೆ", contact: "ಸಂಪರ್ಕ", cta: "ಪ್ರಾರಂಭಿಸಿ" },
-  mr: { home: "होम", templates: "टेम्प्लेट्स", howItWorks: "कसे काम करते", contact: "संपर्क", cta: "सुरुवात करा" },
-  te: { home: "హోమ్", templates: "టెంప్లేట్లు", howItWorks: "ఎలా పని చేస్తుంది", contact: "సంప్రదించండి", cta: "మొదలుపెట్టండి" },
+const navT: Translations<NavbarStrings> = {
+  en: { home: "Home", templates: "Templates", howItWorks: "How It Works", library: "Library", contact: "Contact", cta: "Get Started" },
+  hi: { home: "होम", templates: "टेम्प्लेट", howItWorks: "कैसे काम करता है", library: "लाइब्रेरी", contact: "संपर्क", cta: "शुरू करें" },
+  kn: { home: "ಮುಖ್ಯ", templates: "ಟೆಂಪ್ಲೇಟ್", howItWorks: "ಹೇಗೆ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತದೆ", library: "ಗ್ರಂಥಾಲಯ", contact: "ಸಂಪರ್ಕ", cta: "ಪ್ರಾರಂಭಿಸಿ" },
+  mr: { home: "होम", templates: "टेम्प्लेट्स", howItWorks: "कसे काम करते", library: "लायब्ररी", contact: "संपर्क", cta: "सुरुवात करा" },
+  ta: { home: "முகப்பு", templates: "வார்ப்புருக்கள்", howItWorks: "எப்படி செயல்படுகிறது", library: "நூலகம்", contact: "தொடர்பு", cta: "தொடங்குங்கள்" },
+  te: { home: "హోమ్", templates: "టెంప్లేట్లు", howItWorks: "ఎలా పని చేస్తుంది", library: "లైబ్రరీ", contact: "సంప్రదించండి", cta: "మొదలుపెట్టండి" },
 };
 
-const NAV_LINKS = [
-  { key: "home",       id: "hero" },
-  { key: "templates",  id: "templates" },
-  { key: "howItWorks", id: "how-it-works" },
-  { key: "contact",    id: "contact" },
-] as const;
+type NavLink =
+  | { key: keyof NavbarStrings; kind: "section"; id: string }
+  | { key: keyof NavbarStrings; kind: "route"; to: string };
 
-// Which section id maps to each nav key
-const SECTION_TO_KEY: Record<string, string> = {
-  hero:          "home",
-  features:      "home",
-  templates:     "templates",
+const NAV_LINKS: NavLink[] = [
+  { key: "home",       kind: "section", id: "hero" },
+  { key: "templates",  kind: "section", id: "templates" },
+  { key: "howItWorks", kind: "section", id: "how-it-works" },
+  { key: "library",    kind: "route",   to: "/library" },
+  { key: "contact",    kind: "section", id: "contact" },
+];
+
+// Which section id maps to each nav key (scroll-spy on the home page)
+const SECTION_TO_KEY: Record<string, keyof NavbarStrings> = {
+  hero:           "home",
+  features:       "home",
+  templates:      "templates",
   "how-it-works": "howItWorks",
-  testimonials:  "contact",
-  contact:       "contact",
+  testimonials:   "contact",
+  contact:        "contact",
 };
 
-const ALL_SECTION_IDS = ["hero", "features", "templates", "how-it-works", "testimonials", "contact"];
+const ALL_SECTION_IDS = Object.keys(SECTION_TO_KEY);
 
-export const Navbar = ({ currentLanguage, onLanguageChange, onGetStarted }: NavbarProps) => {
+export const Navbar = () => {
   const [scrolled, setScrolled]     = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeKey, setActiveKey]   = useState("home");
-  const t = navT[currentLanguage as keyof typeof navT] || navT.en;
+  const [activeKey, setActiveKey]   = useState<keyof NavbarStrings>("home");
+  const t = useTranslation(navT);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Track active section via IntersectionObserver
+  // Close the mobile drawer whenever the route changes.
   useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
+  // Track the active section via IntersectionObserver (home page only).
+  useEffect(() => {
+    if (!isHome) return;
     const observers: IntersectionObserver[] = [];
     ALL_SECTION_IDS.forEach((id) => {
       const el = document.getElementById(id);
@@ -62,15 +84,36 @@ export const Navbar = ({ currentLanguage, onLanguageChange, onGetStarted }: Navb
       observers.push(obs);
     });
     return () => observers.forEach((o) => o.disconnect());
-  }, []);
+  }, [isHome]);
 
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const goToSection = (id: string) => {
+    if (isHome) {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(`/#${id}`);
+    }
     setMobileOpen(false);
   };
 
-  const navBase = scrolled
-    ? "bg-white/95 backdrop-blur-sm shadow-sm border-b border-border"
+  const handleLink = (link: NavLink) => {
+    if (link.kind === "section") {
+      goToSection(link.id);
+    } else {
+      navigate(link.to);
+      setMobileOpen(false);
+    }
+  };
+
+  const isLinkActive = (link: NavLink) => {
+    if (link.kind === "route") return location.pathname.startsWith(link.to);
+    return isHome && activeKey === link.key;
+  };
+
+  // Over the dark hero the navbar is transparent with light text; everywhere
+  // else (scrolled, inner pages, open drawer) it sits on the page background.
+  const solid = scrolled || !isHome || mobileOpen;
+  const navBase = solid
+    ? "bg-background/95 backdrop-blur-sm shadow-sm border-b border-border"
     : "bg-transparent";
 
   return (
@@ -78,33 +121,39 @@ export const Navbar = ({ currentLanguage, onLanguageChange, onGetStarted }: Navb
       <div className="container mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <div className="flex items-center gap-2.5 cursor-pointer" onClick={() => scrollTo("hero")}>
+        <button
+          className="flex items-center gap-2.5"
+          onClick={() => (isHome ? goToSection("hero") : navigate("/"))}
+          aria-label="LandDocs — go to homepage"
+        >
           <div className="w-8 h-8 bg-primary flex items-center justify-center rounded-sm">
-            <FileText className="h-4 w-4 text-primary-foreground" />
+            <FileText className="h-4 w-4 text-primary-foreground" aria-hidden="true" />
           </div>
-          <span className={`text-lg font-bold font-serif tracking-wide transition-colors ${scrolled ? "text-foreground" : "text-white"}`}>
+          <span className={`text-lg font-bold font-serif tracking-wide transition-colors ${solid ? "text-foreground" : "text-white"}`}>
             LandDocs
           </span>
-        </div>
+        </button>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-5 lg:gap-7">
-          {NAV_LINKS.map(({ key, id }) => {
-            const isActive = activeKey === key;
+        <nav className="hidden md:flex items-center gap-5 lg:gap-7" aria-label="Main navigation">
+          {NAV_LINKS.map((link) => {
+            const isActive = isLinkActive(link);
             return (
               <button
-                key={id}
-                onClick={() => scrollTo(id)}
+                key={link.key}
+                onClick={() => handleLink(link)}
+                aria-current={isActive ? "page" : undefined}
                 className={`
                   relative text-sm font-medium transition-colors pb-0.5
-                  ${scrolled
+                  ${solid
                     ? isActive ? "text-primary" : "text-foreground/60 hover:text-primary"
                     : isActive ? "text-white" : "text-white/70 hover:text-white"}
                 `}
               >
-                {t[key]}
+                {t[link.key]}
                 {/* Active underline */}
                 <span
+                  aria-hidden="true"
                   className={`absolute bottom-0 left-0 h-[2px] bg-accent transition-all duration-300 ${isActive ? "w-full" : "w-0"}`}
                 />
               </button>
@@ -113,11 +162,12 @@ export const Navbar = ({ currentLanguage, onLanguageChange, onGetStarted }: Navb
         </nav>
 
         {/* Desktop right */}
-        <div className="hidden md:flex items-center gap-3">
-          <LanguageSelector currentLanguage={currentLanguage} onLanguageChange={onLanguageChange} />
+        <div className="hidden md:flex items-center gap-2">
+          <ThemeToggle solid={solid} />
+          <LanguageSelector />
           <Button
-            onClick={onGetStarted}
-            className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-sm px-5 h-9 rounded-sm"
+            onClick={() => goToSection("templates")}
+            className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-sm px-5 h-9 rounded-sm ml-1"
           >
             {t.cta}
           </Button>
@@ -125,35 +175,38 @@ export const Navbar = ({ currentLanguage, onLanguageChange, onGetStarted }: Navb
 
         {/* Mobile toggle */}
         <button
-          className={`md:hidden transition-colors ${scrolled ? "text-foreground" : "text-white"}`}
+          className={`md:hidden p-2 -mr-2 transition-colors ${solid ? "text-foreground" : "text-white"}`}
           onClick={() => setMobileOpen((v) => !v)}
-          aria-label="Toggle menu"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
         >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {mobileOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
         </button>
       </div>
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-b border-border px-5 sm:px-6 py-5 space-y-1">
-          {NAV_LINKS.map(({ key, id }) => {
-            const isActive = activeKey === key;
+        <div className="md:hidden bg-background border-b border-border px-5 sm:px-6 py-5 space-y-1">
+          {NAV_LINKS.map((link) => {
+            const isActive = isLinkActive(link);
             return (
               <button
-                key={id}
-                onClick={() => scrollTo(id)}
+                key={link.key}
+                onClick={() => handleLink(link)}
+                aria-current={isActive ? "page" : undefined}
                 className={`block w-full text-left text-sm font-medium py-2.5 border-b border-border/50 last:border-0 transition-colors ${
                   isActive ? "text-primary font-semibold" : "text-foreground/65 hover:text-primary"
                 }`}
               >
-                {t[key]}
+                {t[link.key]}
               </button>
             );
           })}
-          <div className="flex items-center gap-3 pt-3">
-            <LanguageSelector currentLanguage={currentLanguage} onLanguageChange={onLanguageChange} />
+          <div className="flex items-center gap-2 pt-3">
+            <ThemeToggle solid />
+            <LanguageSelector />
             <Button
-              onClick={onGetStarted}
+              onClick={() => goToSection("templates")}
               className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-sm"
             >
               {t.cta}

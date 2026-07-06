@@ -1,10 +1,14 @@
 import { Reveal } from "./Reveal";
+import { useTranslation, type Translations } from "@/i18n";
 
-interface HowItWorksSectionProps {
-  currentLanguage: string;
+interface HowItWorksStrings {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  steps: { number: string; title: string; description: string }[];
 }
 
-const translations = {
+const translations: Translations<HowItWorksStrings> = {
   en: {
     eyebrow: "The Process",
     title: "Three Steps to Registered",
@@ -60,6 +64,16 @@ const translations = {
       { number: "03", title: "विश्वासाने नोंदणी करा", description: "उप-निबंधकाच्या कार्यालयात तुमचे पूर्ण केलेले दस्तऐवज सादर करा." },
     ],
   },
+  ta: {
+    eyebrow: "செயல்முறை",
+    title: "பதிவுக்கு மூன்று படிகள்",
+    subtitle: "வார்ப்புருவைத் தேர்ந்தெடுப்பதிலிருந்து பதிவு அலுவலகம் வரை — பயணத்தை எளிதாக்குகிறோம்.",
+    steps: [
+      { number: "01", title: "வார்ப்புருவைத் தேர்ந்தெடுங்கள்", description: "சட்ட இணக்கமான வார்ப்புருக்களின் நூலகத்தை உலாவுங்கள்." },
+      { number: "02", title: "விவரங்களை நிரப்புங்கள்", description: "உங்கள் சொத்து விவரங்களுடன் வார்ப்புருவை பூர்த்தி செய்யுங்கள்." },
+      { number: "03", title: "நம்பிக்கையுடன் பதிவு செய்யுங்கள்", description: "சார்-பதிவாளர் அலுவலகத்தில் உங்கள் ஆவணத்தைச் சமர்ப்பியுங்கள்." },
+    ],
+  },
   te: {
     eyebrow: "ప్రక్రియ",
     title: "నమోదుకు మూడు దశలు",
@@ -72,8 +86,8 @@ const translations = {
   },
 };
 
-export const HowItWorksSection = ({ currentLanguage }: HowItWorksSectionProps) => {
-  const t = translations[currentLanguage as keyof typeof translations] || translations.en;
+export const HowItWorksSection = () => {
+  const t = useTranslation(translations);
 
   return (
     <section id="how-it-works" className="py-16 sm:py-20 md:py-24 bg-primary text-primary-foreground">
@@ -94,7 +108,7 @@ export const HowItWorksSection = ({ currentLanguage }: HowItWorksSectionProps) =
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 relative">
           {/* Connector lines (desktop) */}
-          <div className="hidden md:block absolute top-8 left-1/3 right-1/3 h-px bg-white/15 pointer-events-none" />
+          <div className="hidden md:block absolute top-8 left-1/3 right-1/3 h-px bg-white/15 pointer-events-none" aria-hidden="true" />
 
           {t.steps.map((step, i) => (
             <Reveal key={i} delay={i * 130} className="relative flex flex-col items-center text-center px-6 sm:px-8 py-10 md:py-0">
@@ -105,7 +119,7 @@ export const HowItWorksSection = ({ currentLanguage }: HowItWorksSectionProps) =
                 </div>
                 {/* Connector line (mobile, vertical) */}
                 {i < t.steps.length - 1 && (
-                  <div className="md:hidden absolute top-full left-1/2 -translate-x-1/2 w-px h-10 bg-white/15 mt-2" />
+                  <div className="md:hidden absolute top-full left-1/2 -translate-x-1/2 w-px h-10 bg-white/15 mt-2" aria-hidden="true" />
                 )}
               </div>
 

@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Globe, ChevronDown } from "lucide-react";
+import { Check, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -7,56 +6,43 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { SUPPORTED_LANGUAGES, useLanguage } from "@/i18n";
 
-export interface Language {
-  code: string;
-  name: string;
-  nativeName: string;
-}
-
-const languages: Language[] = [
-  { code: "en", name: "English", nativeName: "English" },
-  { code: "hi", name: "Hindi", nativeName: "हिंदी" },
-  { code: "kn", name: "Kannada", nativeName: "ಕನ್ನಡ" },
-  { code: "mr", name: "Marathi", nativeName: "मराठी" },
-  { code: "te", name: "Telugu", nativeName: "తెలుగు" },
-];
-
-interface LanguageSelectorProps {
-  currentLanguage: string;
-  onLanguageChange: (languageCode: string) => void;
-}
-
-export const LanguageSelector = ({ currentLanguage, onLanguageChange }: LanguageSelectorProps) => {
-  const currentLang = languages.find(lang => lang.code === currentLanguage) || languages[0];
+export const LanguageSelector = () => {
+  const { language, setLanguage } = useLanguage();
+  const currentLang = SUPPORTED_LANGUAGES.find((lang) => lang.code === language) ?? SUPPORTED_LANGUAGES[0];
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="gap-2 hover-lift">
-          <Globe className="h-4 w-4" />
+        <Button
+          variant="outline"
+          className="gap-2 h-9 rounded-sm font-sans"
+          aria-label={`Change language — current: ${currentLang.name}`}
+        >
+          <Globe className="h-4 w-4" aria-hidden="true" />
           <span className="hidden sm:inline">{currentLang.nativeName}</span>
-          <span className="sm:hidden">{currentLang.code.toUpperCase()}</span>
-          <ChevronDown className="h-4 w-4" />
+          <span className="sm:hidden uppercase">{currentLang.code}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-card shadow-card">
-        {languages.map((language) => (
-          <DropdownMenuItem
-            key={language.code}
-            onClick={() => onLanguageChange(language.code)}
-            className={`cursor-pointer ${
-              language.code === currentLanguage 
-                ? "bg-primary/10 text-primary font-medium" 
-                : "hover:bg-muted"
-            }`}
-          >
-            <div className="flex flex-col">
-              <span className="font-medium">{language.nativeName}</span>
-              <span className="text-xs text-muted-foreground">{language.name}</span>
-            </div>
-          </DropdownMenuItem>
-        ))}
+      <DropdownMenuContent align="end" className="bg-popover min-w-[10rem]">
+        {SUPPORTED_LANGUAGES.map((lang) => {
+          const isActive = lang.code === language;
+          return (
+            <DropdownMenuItem
+              key={lang.code}
+              onClick={() => setLanguage(lang.code)}
+              className={`cursor-pointer gap-3 ${isActive ? "bg-primary/10 text-primary font-medium" : ""}`}
+              aria-current={isActive ? "true" : undefined}
+            >
+              <div className="flex flex-col flex-1">
+                <span className="font-medium leading-tight">{lang.nativeName}</span>
+                <span className="text-xs text-muted-foreground">{lang.name}</span>
+              </div>
+              {isActive && <Check className="h-4 w-4 text-primary" aria-hidden="true" />}
+            </DropdownMenuItem>
+          );
+        })}
       </DropdownMenuContent>
     </DropdownMenu>
   );

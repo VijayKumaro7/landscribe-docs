@@ -1,11 +1,23 @@
 import { Quote } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { useTranslation, type Translations } from "@/i18n";
 
-interface TestimonialsSectionProps {
-  currentLanguage: string;
+interface Testimonial {
+  quote: string;
+  name: string;
+  role: string;
+  location: string;
+  initials: string;
 }
 
-const translations = {
+interface TestimonialsStrings {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  testimonials: Testimonial[];
+}
+
+const translations: Translations<TestimonialsStrings> = {
   en: {
     eyebrow: "Client Stories",
     title: "Trusted Across India",
@@ -94,6 +106,25 @@ const translations = {
       },
     ],
   },
+  ta: {
+    eyebrow: "வாடிக்கையாளர் கதைகள்",
+    title: "இந்தியா முழுவதும் நம்பப்படுகிறது",
+    subtitle: "சொத்து உரிமையாளர்களும் சட்ட நிபுணர்களும் துல்லியமான ஆவணமாக்கலுக்கு LandDocs-ஐ நம்புகிறார்கள்.",
+    testimonials: [
+      {
+        quote: "பெங்களூருவில் உள்ள என் சொத்துக்கு விற்பனைப் பத்திர வார்ப்புருவைப் பயன்படுத்தினேன். எந்தத் திருத்தமும் இல்லாமல் ஏற்றுக்கொள்ளப்பட்டது.",
+        name: "ராஜேஷ் குமார்", role: "சொத்து உரிமையாளர்", location: "பெங்களூரு, கர்நாடகா", initials: "RK",
+      },
+      {
+        quote: "சட்ட ஆலோசகராக, என் அனைத்து வாடிக்கையாளர்களுக்கும் LandDocs-ஐ பரிந்துரைக்கிறேன்.",
+        name: "பிரியா சர்மா", role: "சட்ட ஆலோசகர்", location: "புனே, மகாராஷ்டிரா", initials: "PS",
+      },
+      {
+        quote: "வணிகச் சொத்துக்கான குத்தகைப் பத்திரத்தைப் பதிவிறக்கினேன். பதிவு செயல்முறை மிகவும் சுமூகமாக இருந்தது.",
+        name: "வெங்கட் ரெட்டி", role: "வணிக உரிமையாளர்", location: "ஹைதராபாத், தெலங்கானா", initials: "VR",
+      },
+    ],
+  },
   te: {
     eyebrow: "క్లయింట్ కథలు",
     title: "భారతదేశం అంతటా విశ్వసించబడింది",
@@ -115,8 +146,8 @@ const translations = {
   },
 };
 
-export const TestimonialsSection = ({ currentLanguage }: TestimonialsSectionProps) => {
-  const t = translations[currentLanguage as keyof typeof translations] || translations.en;
+export const TestimonialsSection = () => {
+  const t = useTranslation(translations);
 
   return (
     <section id="testimonials" className="py-16 sm:py-20 md:py-24 bg-background">
@@ -142,12 +173,12 @@ export const TestimonialsSection = ({ currentLanguage }: TestimonialsSectionProp
               delay={i * 110}
               className="bg-card border border-border p-6 sm:p-8 flex flex-col h-full hover-lift sm:last:col-span-2 lg:last:col-span-1"
             >
-              <Quote className="h-7 w-7 text-accent/40 mb-5 shrink-0" />
-              <p className="font-sans text-foreground/80 text-sm leading-relaxed flex-1 mb-8 italic">
+              <Quote className="h-7 w-7 text-accent/40 mb-5 shrink-0" aria-hidden="true" />
+              <blockquote className="font-sans text-foreground/80 text-sm leading-relaxed flex-1 mb-8 italic">
                 "{item.quote}"
-              </p>
+              </blockquote>
               <div className="flex items-center gap-3 pt-6 border-t border-border">
-                <div className="w-10 h-10 bg-primary flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 bg-primary flex items-center justify-center shrink-0" aria-hidden="true">
                   <span className="font-sans text-primary-foreground text-xs font-bold">
                     {item.initials}
                   </span>
