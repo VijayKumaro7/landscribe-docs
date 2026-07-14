@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FileText, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "./LanguageSelector";
+import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 import { useTranslation, type Translations } from "@/i18n";
 
@@ -123,9 +124,7 @@ export const Navbar = () => {
           onClick={() => (isHome ? goToSection("hero") : navigate("/"))}
           aria-label="LandDocs — go to homepage"
         >
-          <div className="w-8 h-8 bg-primary flex items-center justify-center rounded-sm">
-            <FileText className="h-4 w-4 text-primary-foreground" aria-hidden="true" />
-          </div>
+          <Logo className="w-8 h-8 shrink-0" />
           <span className={`text-lg font-bold font-serif tracking-wide transition-colors ${solid ? "text-foreground" : "text-white"}`}>
             LandDocs
           </span>
