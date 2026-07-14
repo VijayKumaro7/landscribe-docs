@@ -385,7 +385,7 @@ export const ContactSection = () => {
               variant="outline"
               className="w-full h-11 rounded-sm font-sans font-semibold text-sm border-primary/30 text-primary hover:bg-primary/5 hover:text-primary"
             >
-              <Link to="/downloads">
+              <Link to="/services">
                 <Download className="h-4 w-4 mr-2" aria-hidden="true" />
                 {t.downloadCta}
               </Link>

@@ -9,18 +9,18 @@ import { useTranslation, type Translations } from "@/i18n";
 interface NavbarStrings {
   home: string;
   howItWorks: string;
-  downloads: string;
+  services: string;
   contact: string;
   cta: string;
 }
 
 const navT: Translations<NavbarStrings> = {
-  en: { home: "Home", howItWorks: "How It Works", downloads: "Downloads", contact: "Contact", cta: "Get Started" },
-  hi: { home: "होम", howItWorks: "कैसे काम करता है", downloads: "डाउनलोड", contact: "संपर्क", cta: "शुरू करें" },
-  kn: { home: "ಮುಖ್ಯ", howItWorks: "ಹೇಗೆ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತದೆ", downloads: "ಡೌನ್‌ಲೋಡ್‌ಗಳು", contact: "ಸಂಪರ್ಕ", cta: "ಪ್ರಾರಂಭಿಸಿ" },
-  mr: { home: "होम", howItWorks: "कसे काम करते", downloads: "डाउनलोड", contact: "संपर्क", cta: "सुरुवात करा" },
-  ta: { home: "முகப்பு", howItWorks: "எப்படி செயல்படுகிறது", downloads: "பதிவிறக்கங்கள்", contact: "தொடர்பு", cta: "தொடங்குங்கள்" },
-  te: { home: "హోమ్", howItWorks: "ఎలా పని చేస్తుంది", downloads: "డౌన్లోడ్లు", contact: "సంప్రదించండి", cta: "మొదలుపెట్టండి" },
+  en: { home: "Home", howItWorks: "How It Works", services: "Services", contact: "Contact", cta: "Get Started" },
+  hi: { home: "होम", howItWorks: "कैसे काम करता है", services: "सेवाएं", contact: "संपर्क", cta: "शुरू करें" },
+  kn: { home: "ಮುಖ್ಯ", howItWorks: "ಹೇಗೆ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತದೆ", services: "ಸೇವೆಗಳು", contact: "ಸಂಪರ್ಕ", cta: "ಪ್ರಾರಂಭಿಸಿ" },
+  mr: { home: "होम", howItWorks: "कसे काम करते", services: "सेवा", contact: "संपर्क", cta: "सुरुवात करा" },
+  ta: { home: "முகப்பு", howItWorks: "எப்படி செயல்படுகிறது", services: "சேவைகள்", contact: "தொடர்பு", cta: "தொடங்குங்கள்" },
+  te: { home: "హోమ్", howItWorks: "ఎలా పని చేస్తుంది", services: "సేవలు", contact: "సంప్రదించండి", cta: "మొదలుపెట్టండి" },
 };
 
 type NavLink =
@@ -30,7 +30,7 @@ type NavLink =
 const NAV_LINKS: NavLink[] = [
   { key: "home",       kind: "section", id: "hero" },
   { key: "howItWorks", kind: "section", id: "how-it-works" },
-  { key: "downloads",  kind: "route",   to: "/downloads" },
+  { key: "services",   kind: "route",   to: "/services" },
   { key: "contact",    kind: "section", id: "contact" },
 ];
 
@@ -163,7 +163,7 @@ export const Navbar = () => {
           <ThemeToggle solid={solid} />
           <LanguageSelector />
           <Button
-            onClick={() => navigate("/downloads")}
+            onClick={() => navigate("/services")}
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-sm px-5 h-9 rounded-sm ml-1"
           >
             {t.cta}
@@ -204,7 +204,7 @@ export const Navbar = () => {
             <LanguageSelector />
             <Button
               onClick={() => {
-                navigate("/downloads");
+                navigate("/services");
                 setMobileOpen(false);
               }}
               className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-sm"

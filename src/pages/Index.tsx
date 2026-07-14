@@ -40,7 +40,7 @@ const Index = () => {
 
       <main id="main-content">
         <HeroSection
-          onGetStarted={() => navigate("/downloads")}
+          onGetStarted={() => navigate("/services")}
           onLearnMore={() => scrollTo("how-it-works")}
         />
         <FeaturesSection />

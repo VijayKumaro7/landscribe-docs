@@ -33,7 +33,7 @@ import {
 } from "@/data/documents";
 import { downloadFile } from "@/lib/download";
 
-interface DownloadsStrings {
+interface ServicesStrings {
   eyebrow: string;
   title: string;
   subtitle: string;
@@ -55,10 +55,10 @@ interface DownloadsStrings {
   downloadStarted: string;
 }
 
-const downloadsT: Translations<DownloadsStrings> = {
+const servicesT: Translations<ServicesStrings> = {
   en: {
-    eyebrow: "Document Downloads",
-    title: "Download Legal Documents",
+    eyebrow: "Our Services",
+    title: "Services & Document Downloads",
     subtitle:
       "All demo documents in one place, organized by category. Preview and download professionally formatted sample deeds in six languages — every file is watermarked and contains fictional data.",
     searchPlaceholder: "Search documents… (press / to focus)",
@@ -79,8 +79,8 @@ const downloadsT: Translations<DownloadsStrings> = {
     downloadStarted: "Download started",
   },
   hi: {
-    eyebrow: "दस्तावेज़ डाउनलोड",
-    title: "कानूनी दस्तावेज़ डाउनलोड करें",
+    eyebrow: "हमारी सेवाएं",
+    title: "सेवाएं और दस्तावेज़ डाउनलोड",
     subtitle:
       "सभी डेमो दस्तावेज़ एक ही स्थान पर, श्रेणी के अनुसार व्यवस्थित। छह भाषाओं में नमूना विलेख देखें और डाउनलोड करें — हर फ़ाइल वॉटरमार्क युक्त है और काल्पनिक डेटा रखती है।",
     searchPlaceholder: "दस्तावेज़ खोजें…",
@@ -101,8 +101,8 @@ const downloadsT: Translations<DownloadsStrings> = {
     downloadStarted: "डाउनलोड शुरू हुआ",
   },
   kn: {
-    eyebrow: "ದಾಖಲೆ ಡೌನ್‌ಲೋಡ್‌ಗಳು",
-    title: "ಕಾನೂನು ದಾಖಲೆಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+    eyebrow: "ನಮ್ಮ ಸೇವೆಗಳು",
+    title: "ಸೇವೆಗಳು ಮತ್ತು ದಾಖಲೆ ಡೌನ್‌ಲೋಡ್‌ಗಳು",
     subtitle:
       "ಎಲ್ಲಾ ಡೆಮೊ ದಾಖಲೆಗಳು ಒಂದೇ ಸ್ಥಳದಲ್ಲಿ, ವರ್ಗದ ಪ್ರಕಾರ ಜೋಡಿಸಲಾಗಿದೆ. ಆರು ಭಾಷೆಗಳಲ್ಲಿ ಮಾದರಿ ಪತ್ರಗಳನ್ನು ವೀಕ್ಷಿಸಿ ಮತ್ತು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ — ಪ್ರತಿ ಫೈಲ್ ವಾಟರ್‌ಮಾರ್ಕ್ ಹೊಂದಿದ್ದು ಕಾಲ್ಪನಿಕ ಡೇಟಾ ಒಳಗೊಂಡಿದೆ.",
     searchPlaceholder: "ದಾಖಲೆಗಳನ್ನು ಹುಡುಕಿ…",
@@ -123,8 +123,8 @@ const downloadsT: Translations<DownloadsStrings> = {
     downloadStarted: "ಡೌನ್‌ಲೋಡ್ ಪ್ರಾರಂಭವಾಗಿದೆ",
   },
   mr: {
-    eyebrow: "दस्तऐवज डाउनलोड",
-    title: "कायदेशीर दस्तऐवज डाउनलोड करा",
+    eyebrow: "आमच्या सेवा",
+    title: "सेवा आणि दस्तऐवज डाउनलोड",
     subtitle:
       "सर्व डेमो दस्तऐवज एकाच ठिकाणी, श्रेणीनुसार व्यवस्थित. सहा भाषांमध्ये नमुना दस्तऐवज पहा आणि डाउनलोड करा — प्रत्येक फाइल वॉटरमार्क केलेली असून काल्पनिक डेटा आहे.",
     searchPlaceholder: "दस्तऐवज शोधा…",
@@ -145,8 +145,8 @@ const downloadsT: Translations<DownloadsStrings> = {
     downloadStarted: "डाउनलोड सुरू झाले",
   },
   ta: {
-    eyebrow: "ஆவணப் பதிவிறக்கங்கள்",
-    title: "சட்ட ஆவணங்களைப் பதிவிறக்கவும்",
+    eyebrow: "எங்கள் சேவைகள்",
+    title: "சேவைகள் மற்றும் ஆவணப் பதிவிறக்கங்கள்",
     subtitle:
       "அனைத்து டெமோ ஆவணங்களும் ஒரே இடத்தில், வகை வாரியாக ஒழுங்கமைக்கப்பட்டுள்ளன. ஆறு மொழிகளில் மாதிரி பத்திரங்களை முன்னோட்டமிட்டு பதிவிறக்கவும் — ஒவ்வொரு கோப்பும் நீர்முத்திரையுடன் கற்பனை தரவுகளைக் கொண்டுள்ளது.",
     searchPlaceholder: "ஆவணங்களைத் தேடுங்கள்…",
@@ -167,8 +167,8 @@ const downloadsT: Translations<DownloadsStrings> = {
     downloadStarted: "பதிவிறக்கம் தொடங்கியது",
   },
   te: {
-    eyebrow: "డాక్యుమెంట్ డౌన్లోడ్లు",
-    title: "చట్టపరమైన పత్రాలను డౌన్లోడ్ చేయండి",
+    eyebrow: "మా సేవలు",
+    title: "సేవలు మరియు డాక్యుమెంట్ డౌన్లోడ్లు",
     subtitle:
       "అన్ని డెమో పత్రాలు ఒకే చోట, వర్గం వారీగా అమర్చబడ్డాయి. ఆరు భాషల్లో నమూనా పత్రాలను ప్రివ్యూ చేసి డౌన్లోడ్ చేయండి — ప్రతి ఫైల్ వాటర్‌మార్క్‌తో కల్పిత డేటాను కలిగి ఉంది.",
     searchPlaceholder: "పత్రాలను వెతకండి…",
@@ -212,8 +212,8 @@ async function fetchManifest(): Promise<ManifestEntry[]> {
   return res.json();
 }
 
-const Downloads = () => {
-  const t = useTranslation(downloadsT);
+const Services = () => {
+  const t = useTranslation(servicesT);
   const { language } = useLanguage();
   const { toast } = useToast();
 
@@ -502,4 +502,4 @@ const Downloads = () => {
   );
 };
 
-export default Downloads;
+export default Services;

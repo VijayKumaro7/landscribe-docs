@@ -159,7 +159,7 @@ export const Footer = () => {
   const goToSection = (id: string) => {
     // The templates grid moved to the dedicated downloads page.
     if (id === "templates") {
-      navigate("/downloads");
+      navigate("/services");
       return;
     }
     if (location.pathname === "/") {
@@ -203,7 +203,7 @@ export const Footer = () => {
             <ul className="space-y-2.5">
               <li>
                 <Link
-                  to="/downloads"
+                  to="/services"
                   className="font-sans text-sm text-primary-foreground/65 hover:text-primary-foreground transition-colors"
                 >
                   {t.libraryLabel}

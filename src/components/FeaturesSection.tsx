@@ -154,7 +154,7 @@ export const FeaturesSection = () => {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-semibold h-12 px-8 rounded-sm text-sm tracking-wide"
           >
-            <Link to="/downloads">
+            <Link to="/services">
               <Download className="h-4 w-4 mr-2" aria-hidden="true" />
               {t.downloadCta}
             </Link>
