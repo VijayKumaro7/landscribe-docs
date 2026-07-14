@@ -1,5 +1,5 @@
-import { FileText } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Logo } from "./Logo";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation, type Translations } from "@/i18n";
 
@@ -185,9 +185,10 @@ export const Footer = () => {
               className="flex items-center gap-2.5 mb-4 group"
               aria-label="LandDocs — back to top"
             >
-              <div className="w-8 h-8 bg-white/10 flex items-center justify-center group-hover:bg-white/15 transition-colors">
-                <FileText className="h-4 w-4 text-primary-foreground" aria-hidden="true" />
-              </div>
+              {/* Ring separates the mark from the footer's matching green */}
+              <span className="rounded-[9px] ring-1 ring-white/20 group-hover:ring-white/35 transition-shadow inline-flex">
+                <Logo className="w-8 h-8 shrink-0" />
+              </span>
               <span className="font-serif text-lg font-bold text-primary-foreground">LandDocs</span>
             </button>
             <p className="font-sans text-primary-foreground/55 text-sm leading-relaxed">
