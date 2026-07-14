@@ -12,7 +12,7 @@ import { PageLoader } from "@/components/PageLoader";
 import Index from "./pages/Index";
 
 // Secondary pages are code-split so the landing page loads as little JS as possible.
-const Downloads = lazy(() => import("./pages/Downloads"));
+const Services = lazy(() => import("./pages/Services"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -37,9 +37,10 @@ const App = () => (
               <Suspense fallback={<PageLoader />}>
                 <Routes>
                   <Route path="/" element={<Index />} />
-                  <Route path="/downloads" element={<Downloads />} />
-                  {/* Old URL kept for bookmarks/links shared before the rename */}
-                  <Route path="/library" element={<Navigate to="/downloads" replace />} />
+                  <Route path="/services" element={<Services />} />
+                  {/* Old URLs kept for bookmarks/links shared before the renames */}
+                  <Route path="/downloads" element={<Navigate to="/services" replace />} />
+                  <Route path="/library" element={<Navigate to="/services" replace />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>

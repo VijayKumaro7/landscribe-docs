@@ -43,9 +43,9 @@ The entire UI — and every demo document — is available in six languages, swi
 | `ta` | Tamil (தமிழ்) |
 | `te` | Telugu (తెలుగు) |
 
-### Document Downloads (`/downloads`)
+### Services & Document Downloads (`/services`)
 
-A dedicated downloads page with **48 professionally formatted demo PDFs** — 8 deed types × 6 languages — organized cleanly by category (one section per deed type). The old `/library` URL redirects here:
+A dedicated downloads page with **48 professionally formatted demo PDFs** — 8 deed types × 6 languages — organized cleanly by category (one section per deed type). The old `/downloads` and `/library` URLs redirect here:
 
 | Deed type | Tier |
 |-----------|------|
@@ -58,13 +58,13 @@ A dedicated downloads page with **48 professionally formatted demo PDFs** — 8 
 | Mortgage Deed | Premium |
 | Power of Attorney | Premium |
 
-Downloads-page features: category sections with tier badges and descriptions, full-text search (press `/` to focus), language and category filters, in-browser PDF preview dialog, one-click downloads, per-document metadata (pages, file size), and a friendly empty state.
+Services-page features: category sections with tier badges and descriptions, full-text search (press `/` to focus), language and category filters, in-browser PDF preview dialog, one-click downloads, per-document metadata (pages, file size), and a friendly empty state.
 
 Every demo PDF includes realistic-but-fictional parties, a property schedule with boundaries, numbered legal clauses, signature and witness sections, a registration-details block with seal, page numbers, a repeating **"DEMO DOCUMENT" watermark**, and PDF metadata marking it as a demonstration sample. Native-script typography (Noto Serif families) is used for each language.
 
 ### Landing Page
 
-Hero with stats, feature highlights with a prominent "Download Documents" call-to-action, a three-step process section, testimonials, and a contact form with inline validation plus a second downloads shortcut — all fully translated. Document downloads live on their own dedicated page.
+Hero with stats, feature highlights with a prominent "Download Documents" call-to-action, a three-step process section, testimonials, and a contact form with inline validation plus a second downloads shortcut — all fully translated. Document downloads live on the dedicated Services page.
 
 ### Light / Dark Mode
 
@@ -143,7 +143,7 @@ src/
 ├── lib/                       # cn() utility, downloadFile()
 ├── pages/
 │   ├── Index.tsx              # Landing page (composes all sections)
-│   ├── Downloads.tsx          # Document downloads by category (lazy-loaded)
+│   ├── Services.tsx           # Services & document downloads by category (lazy-loaded)
 │   └── NotFound.tsx           # 404 page (lazy-loaded)
 ├── fonts.css                  # Self-hosted font faces (latin subset)
 └── index.css                  # Design tokens, animations, utilities
@@ -166,7 +166,7 @@ public/
 
 - **i18n**: a small custom context (`src/i18n/`) rather than a heavyweight library. Translation tables are colocated with the components that use them and typed as `Translations<T> = Record<LanguageCode, T>`, so adding a language is a compile-time checklist.
 - **Demo PDFs are generated offline**, not in the browser: Indic scripts need real text shaping, which browser-side PDF libraries don't do reliably. Chromium's print pipeline shapes Devanagari/Kannada/Tamil/Telugu perfectly, and `pdf-lib` stamps demo metadata afterwards.
-- **Performance**: the downloads and 404 routes are code-split; fonts are self-hosted with `font-display: swap` and preloaded; the hero image has explicit dimensions to avoid layout shift; `prefers-reduced-motion` disables animations.
+- **Performance**: the services and 404 routes are code-split; fonts are self-hosted with `font-display: swap` and preloaded; the hero image has explicit dimensions to avoid layout shift; `prefers-reduced-motion` disables animations.
 - **Accessibility**: skip-to-content links, `aria-current` navigation, labelled form fields with inline `role="alert"` errors and focus management, keyboard shortcut (`/`) for library search, focus-visible states throughout.
 
 ---

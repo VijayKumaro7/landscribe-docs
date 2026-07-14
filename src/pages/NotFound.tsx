@@ -29,7 +29,7 @@ const NotFound = () => {
             </Link>
           </Button>
           <Button asChild variant="outline" className="rounded-sm font-sans font-medium h-11 px-6">
-            <Link to="/downloads">
+            <Link to="/services">
               <LibraryBig className="h-4 w-4 mr-2" aria-hidden="true" />
               Download Documents
             </Link>
