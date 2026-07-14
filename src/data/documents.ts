@@ -139,21 +139,6 @@ export const DEED_TYPES: DeedTypeInfo[] = [
   },
 ];
 
-/** The six deed types shown on the landing page templates grid. */
-export const FEATURED_DEED_IDS: DeedTypeId[] = [
-  "sale-deed",
-  "gift-deed",
-  "partition-deed",
-  "mortgage-deed",
-  "lease-deed",
-  "power-of-attorney",
-];
-
-export function getDeedType(id: DeedTypeId): DeedTypeInfo {
-  // DEED_TYPES covers every DeedTypeId, so the lookup always succeeds.
-  return DEED_TYPES.find((d) => d.id === id)!;
-}
-
 /** Public URL of a demo PDF for a deed type in a given language. */
 export function documentUrl(type: DeedTypeId, language: LanguageCode): string {
   return `${import.meta.env.BASE_URL}documents/${type}-${language}.pdf`;

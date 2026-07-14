@@ -43,9 +43,9 @@ The entire UI — and every demo document — is available in six languages, swi
 | `ta` | Tamil (தமிழ்) |
 | `te` | Telugu (తెలుగు) |
 
-### Demo Document Library (`/library`)
+### Document Downloads (`/downloads`)
 
-A searchable, filterable library of **48 professionally formatted demo PDFs** — 8 deed types × 6 languages:
+A dedicated downloads page with **48 professionally formatted demo PDFs** — 8 deed types × 6 languages — organized cleanly by category (one section per deed type). The old `/library` URL redirects here:
 
 | Deed type | Tier |
 |-----------|------|
@@ -58,13 +58,13 @@ A searchable, filterable library of **48 professionally formatted demo PDFs** �
 | Mortgage Deed | Premium |
 | Power of Attorney | Premium |
 
-Library features: full-text search (press `/` to focus), language and deed-type filters, in-browser PDF preview dialog, one-click downloads, per-document metadata (pages, file size), and a friendly empty state.
+Downloads-page features: category sections with tier badges and descriptions, full-text search (press `/` to focus), language and category filters, in-browser PDF preview dialog, one-click downloads, per-document metadata (pages, file size), and a friendly empty state.
 
 Every demo PDF includes realistic-but-fictional parties, a property schedule with boundaries, numbered legal clauses, signature and witness sections, a registration-details block with seal, page numbers, a repeating **"DEMO DOCUMENT" watermark**, and PDF metadata marking it as a demonstration sample. Native-script typography (Noto Serif families) is used for each language.
 
 ### Landing Page
 
-Hero with stats, feature highlights, template cards (real download + preview wired to the demo PDFs), a three-step process section, testimonials, and a contact form with inline validation — all fully translated.
+Hero with stats, feature highlights with a prominent "Download Documents" call-to-action, a three-step process section, testimonials, and a contact form with inline validation plus a second downloads shortcut — all fully translated. Document downloads live on their own dedicated page.
 
 ### Light / Dark Mode
 
@@ -121,7 +121,6 @@ src/
 │   ├── LanguageSelector.tsx       # Language dropdown (context-backed)
 │   ├── HeroSection.tsx            # Landing hero with CTA and stats
 │   ├── FeaturesSection.tsx        # "Why LandDocs" feature cards
-│   ├── TemplatesSection.tsx       # Template cards wired to real demo PDFs
 │   ├── HowItWorksSection.tsx      # Three-step process
 │   ├── TestimonialsSection.tsx    # Client testimonial cards
 │   ├── ContactSection.tsx         # Inquiry form with inline validation
@@ -144,7 +143,7 @@ src/
 ├── lib/                       # cn() utility, downloadFile()
 ├── pages/
 │   ├── Index.tsx              # Landing page (composes all sections)
-│   ├── Library.tsx            # Demo document library (lazy-loaded)
+│   ├── Downloads.tsx          # Document downloads by category (lazy-loaded)
 │   └── NotFound.tsx           # 404 page (lazy-loaded)
 ├── fonts.css                  # Self-hosted font faces (latin subset)
 └── index.css                  # Design tokens, animations, utilities
@@ -167,7 +166,7 @@ public/
 
 - **i18n**: a small custom context (`src/i18n/`) rather than a heavyweight library. Translation tables are colocated with the components that use them and typed as `Translations<T> = Record<LanguageCode, T>`, so adding a language is a compile-time checklist.
 - **Demo PDFs are generated offline**, not in the browser: Indic scripts need real text shaping, which browser-side PDF libraries don't do reliably. Chromium's print pipeline shapes Devanagari/Kannada/Tamil/Telugu perfectly, and `pdf-lib` stamps demo metadata afterwards.
-- **Performance**: the library and 404 routes are code-split; fonts are self-hosted with `font-display: swap` and preloaded; the hero image has explicit dimensions to avoid layout shift; `prefers-reduced-motion` disables animations.
+- **Performance**: the downloads and 404 routes are code-split; fonts are self-hosted with `font-display: swap` and preloaded; the hero image has explicit dimensions to avoid layout shift; `prefers-reduced-motion` disables animations.
 - **Accessibility**: skip-to-content links, `aria-current` navigation, labelled form fields with inline `role="alert"` errors and focus management, keyboard shortcut (`/`) for library search, focus-visible states throughout.
 
 ---

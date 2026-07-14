@@ -1,4 +1,6 @@
-import { ShieldCheck, FileText, Zap, Globe, type LucideIcon } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Download, ShieldCheck, FileText, Zap, Globe, type LucideIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 import { useTranslation, type Translations } from "@/i18n";
 
@@ -9,6 +11,7 @@ interface FeaturesStrings {
   title: string;
   subtitle: string;
   features: { title: string; description: string }[];
+  downloadCta: string;
 }
 
 const translations: Translations<FeaturesStrings> = {
@@ -39,6 +42,7 @@ const translations: Translations<FeaturesStrings> = {
           "Documents and guidance available in English, Hindi, Kannada, Marathi, Tamil, and Telugu to serve every Indian property owner.",
       },
     ],
+    downloadCta: "Download Documents",
   },
   hi: {
     eyebrow: "LandDocs क्यों",
@@ -50,6 +54,7 @@ const translations: Translations<FeaturesStrings> = {
       { title: "तत्काल पहुंच", description: "कोई प्रतीक्षा नहीं, कोई अपॉइंटमेंट नहीं।" },
       { title: "6 क्षेत्रीय भाषाएं", description: "हिंदी, कन्नड़, मराठी, तमिल और तेलुगु में उपलब्ध।" },
     ],
+    downloadCta: "दस्तावेज़ डाउनलोड करें",
   },
   kn: {
     eyebrow: "LandDocs ಏಕೆ",
@@ -61,6 +66,7 @@ const translations: Translations<FeaturesStrings> = {
       { title: "ತಕ್ಷಣ ಪ್ರವೇಶ", description: "ನಿರೀಕ್ಷೆ ಇಲ್ಲ, ನೇಮಕ ಇಲ್ಲ." },
       { title: "6 ಪ್ರಾದೇಶಿಕ ಭಾಷೆಗಳು", description: "ಕನ್ನಡ, ಹಿಂದಿ, ಮರಾಠಿ, ತಮಿಳು ಮತ್ತು ತೆಲುಗಿನಲ್ಲಿ ಲಭ್ಯ." },
     ],
+    downloadCta: "ದಾಖಲೆಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
   },
   mr: {
     eyebrow: "LandDocs का",
@@ -72,6 +78,7 @@ const translations: Translations<FeaturesStrings> = {
       { title: "त्वरित प्रवेश", description: "प्रतीक्षा नाही, भेट नाही." },
       { title: "6 प्रादेशिक भाषा", description: "मराठी, हिंदी, कन्नड, तमिळ आणि तेलुगुमध्ये उपलब्ध." },
     ],
+    downloadCta: "दस्तऐवज डाउनलोड करा",
   },
   ta: {
     eyebrow: "ஏன் LandDocs",
@@ -83,6 +90,7 @@ const translations: Translations<FeaturesStrings> = {
       { title: "உடனடி அணுகல்", description: "காத்திருப்பு இல்லை, முன்பதிவு இல்லை." },
       { title: "6 பிராந்திய மொழிகள்", description: "தமிழ், இந்தி, கன்னடம், மராத்தி மற்றும் தெலுங்கில் கிடைக்கிறது." },
     ],
+    downloadCta: "ஆவணங்களைப் பதிவிறக்கவும்",
   },
   te: {
     eyebrow: "LandDocs ఎందుకు",
@@ -94,6 +102,7 @@ const translations: Translations<FeaturesStrings> = {
       { title: "తక్షణ యాక్సెస్", description: "వేచి ఉండటం లేదు, అపాయింట్‌మెంట్ లేదు." },
       { title: "6 ప్రాంతీయ భాషలు", description: "తెలుగు, హిందీ, కన్నడ, మరాఠీ మరియు తమిళంలో అందుబాటులో." },
     ],
+    downloadCta: "పత్రాలను డౌన్లోడ్ చేయండి",
   },
 };
 
@@ -137,6 +146,20 @@ export const FeaturesSection = () => {
             );
           })}
         </div>
+
+        {/* Prominent link to the document downloads page */}
+        <Reveal className="text-center mt-10 md:mt-12">
+          <Button
+            asChild
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-semibold h-12 px-8 rounded-sm text-sm tracking-wide"
+          >
+            <Link to="/downloads">
+              <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+              {t.downloadCta}
+            </Link>
+          </Button>
+        </Reveal>
       </div>
     </section>
   );

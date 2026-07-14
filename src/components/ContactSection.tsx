@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Loader2, Mail, MapPin, Phone, Send } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Download, Loader2, Mail, MapPin, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -33,6 +34,7 @@ interface ContactStrings {
   success: string;
   promiseTitle: string;
   promises: string[];
+  downloadCta: string;
 }
 
 const translations: Translations<ContactStrings> = {
@@ -71,6 +73,7 @@ const translations: Translations<ContactStrings> = {
     success: "We received your message! Our team will contact you within 24 hours.",
     promiseTitle: "Our Promise",
     promises: ["Free initial consultation", "Response within 24 hours", "No hidden charges"],
+    downloadCta: "Download Documents",
   },
   hi: {
     eyebrow: "संपर्क करें",
@@ -85,6 +88,7 @@ const translations: Translations<ContactStrings> = {
     success: "आपका संदेश प्राप्त हुआ! हमारी टीम 24 घंटे में संपर्क करेगी।",
     promiseTitle: "हमारा वादा",
     promises: ["नि:शुल्क प्रारंभिक परामर्श", "24 घंटे में जवाब", "कोई छुपा शुल्क नहीं"],
+    downloadCta: "दस्तावेज़ डाउनलोड करें",
   },
   kn: {
     eyebrow: "ಸಂಪರ್ಕಿಸಿ",
@@ -99,6 +103,7 @@ const translations: Translations<ContactStrings> = {
     success: "ನಿಮ್ಮ ಸಂದೇಶ ಸ್ವೀಕರಿಸಲಾಗಿದೆ! ನಮ್ಮ ತಂಡ 24 ಗಂಟೆಗಳೊಳಗೆ ಸಂಪರ್ಕಿಸುತ್ತದೆ.",
     promiseTitle: "ನಮ್ಮ ಭರವಸೆ",
     promises: ["ಉಚಿತ ಆರಂಭಿಕ ಸಮಾಲೋಚನೆ", "24 ಗಂಟೆಗಳೊಳಗೆ ಪ್ರತಿಕ್ರಿಯೆ", "ಗುಪ್ತ ಶುಲ್ಕಗಳಿಲ್ಲ"],
+    downloadCta: "ದಾಖಲೆಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
   },
   mr: {
     eyebrow: "संपर्क करा",
@@ -113,6 +118,7 @@ const translations: Translations<ContactStrings> = {
     success: "तुमचा संदेश मिळाला! आमची टीम 24 तासांत संपर्क करेल.",
     promiseTitle: "आमचे वचन",
     promises: ["विनामूल्य प्रारंभिक सल्ला", "24 तासांत प्रतिसाद", "कोणतेही छुपे शुल्क नाही"],
+    downloadCta: "दस्तऐवज डाउनलोड करा",
   },
   ta: {
     eyebrow: "தொடர்பு கொள்ளுங்கள்",
@@ -127,6 +133,7 @@ const translations: Translations<ContactStrings> = {
     success: "உங்கள் செய்தி கிடைத்தது! எங்கள் குழு 24 மணி நேரத்தில் தொடர்பு கொள்ளும்.",
     promiseTitle: "எங்கள் வாக்குறுதி",
     promises: ["இலவச ஆரம்ப ஆலோசனை", "24 மணி நேரத்தில் பதில்", "மறைமுகக் கட்டணங்கள் இல்லை"],
+    downloadCta: "ஆவணங்களைப் பதிவிறக்கவும்",
   },
   te: {
     eyebrow: "సంప్రదించండి",
@@ -141,6 +148,7 @@ const translations: Translations<ContactStrings> = {
     success: "మీ సందేశం అందింది! మా బృందం 24 గంటల్లో సంప్రదిస్తుంది.",
     promiseTitle: "మా వాగ్దానం",
     promises: ["ఉచిత ప్రారంభ సంప్రదింపు", "24 గంటల్లో స్పందన", "దాచిన ఛార్జీలు లేవు"],
+    downloadCta: "పత్రాలను డౌన్లోడ్ చేయండి",
   },
 };
 
@@ -370,6 +378,18 @@ export const ContactSection = () => {
                 ))}
               </ul>
             </div>
+
+            {/* Quick access to the downloads page */}
+            <Button
+              asChild
+              variant="outline"
+              className="w-full h-11 rounded-sm font-sans font-semibold text-sm border-primary/30 text-primary hover:bg-primary/5 hover:text-primary"
+            >
+              <Link to="/downloads">
+                <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+                {t.downloadCta}
+              </Link>
+            </Button>
           </Reveal>
         </div>
       </div>
