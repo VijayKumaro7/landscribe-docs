@@ -1,9 +1,8 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
-import { TemplatesSection } from "@/components/TemplatesSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ContactSection } from "@/components/ContactSection";
@@ -13,6 +12,7 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Support deep links like /#templates (used by the navbar on inner pages).
   useEffect(() => {
@@ -40,11 +40,10 @@ const Index = () => {
 
       <main id="main-content">
         <HeroSection
-          onGetStarted={() => scrollTo("templates")}
+          onGetStarted={() => navigate("/downloads")}
           onLearnMore={() => scrollTo("how-it-works")}
         />
         <FeaturesSection />
-        <TemplatesSection />
         <HowItWorksSection />
         <TestimonialsSection />
         <ContactSection />

@@ -32,7 +32,7 @@ const footerT: Translations<FooterStrings> = {
       { label: "Mortgage Deed",      target: "templates" },
       { label: "Power of Attorney",  target: "templates" },
     ],
-    libraryLabel: "Document Library",
+    libraryLabel: "Download Documents",
     legalLinks: ["Privacy Policy", "Terms of Service", "Disclaimer"],
     comingSoon: "This page is coming soon.",
     copyright: "LandDocs. All rights reserved. Made in India.",
@@ -54,7 +54,7 @@ const footerT: Translations<FooterStrings> = {
       { label: "बंधक विलेख", target: "templates" },
       { label: "मुख्तारनामा", target: "templates" },
     ],
-    libraryLabel: "दस्तावेज़ लाइब्रेरी",
+    libraryLabel: "दस्तावेज़ डाउनलोड करें",
     legalLinks: ["गोपनीयता नीति", "सेवा की शर्तें", "अस्वीकरण"],
     comingSoon: "यह पेज जल्द आ रहा है।",
     copyright: "LandDocs. सभी अधिकार सुरक्षित। भारत में निर्मित।",
@@ -76,7 +76,7 @@ const footerT: Translations<FooterStrings> = {
       { label: "ಅಡಮಾನ ಪತ್ರ", target: "templates" },
       { label: "ಅಧಿಕಾರ ಪತ್ರ", target: "templates" },
     ],
-    libraryLabel: "ದಾಖಲೆ ಗ್ರಂಥಾಲಯ",
+    libraryLabel: "ದಾಖಲೆಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
     legalLinks: ["ಗೋಪ್ಯತಾ ನೀತಿ", "ಸೇವೆಯ ನಿಯಮಗಳು", "ಹಕ್ಕುತ್ಯಾಗ"],
     comingSoon: "ಈ ಪುಟ ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ.",
     copyright: "LandDocs. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ. ಭಾರತದಲ್ಲಿ ತಯಾರಿಸಲಾಗಿದೆ.",
@@ -98,7 +98,7 @@ const footerT: Translations<FooterStrings> = {
       { label: "गहाण पत्र", target: "templates" },
       { label: "मुख्तारनामा", target: "templates" },
     ],
-    libraryLabel: "दस्तऐवज लायब्ररी",
+    libraryLabel: "दस्तऐवज डाउनलोड करा",
     legalLinks: ["गोपनीयता धोरण", "सेवेच्या अटी", "अस्वीकरण"],
     comingSoon: "हे पान लवकरच येत आहे.",
     copyright: "LandDocs. सर्व हक्क राखीव. भारतात निर्मित.",
@@ -120,7 +120,7 @@ const footerT: Translations<FooterStrings> = {
       { label: "அடமானப் பத்திரம்", target: "templates" },
       { label: "அதிகாரப் பத்திரம்", target: "templates" },
     ],
-    libraryLabel: "ஆவண நூலகம்",
+    libraryLabel: "ஆவணங்களைப் பதிவிறக்கவும்",
     legalLinks: ["தனியுரிமைக் கொள்கை", "சேவை விதிமுறைகள்", "பொறுப்புத் துறப்பு"],
     comingSoon: "இந்தப் பக்கம் விரைவில் வருகிறது.",
     copyright: "LandDocs. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை. இந்தியாவில் உருவாக்கப்பட்டது.",
@@ -142,7 +142,7 @@ const footerT: Translations<FooterStrings> = {
       { label: "తనఖా పత్రం", target: "templates" },
       { label: "పవర్ ఆఫ్ అటార్నీ", target: "templates" },
     ],
-    libraryLabel: "డాక్యుమెంట్ లైబ్రరీ",
+    libraryLabel: "పత్రాలను డౌన్లోడ్ చేయండి",
     legalLinks: ["గోప్యతా విధానం", "సేవా నిబంధనలు", "నిరాకరణ"],
     comingSoon: "ఈ పేజీ త్వరలో వస్తుంది.",
     copyright: "LandDocs. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి. భారతదేశంలో తయారు చేయబడింది.",
@@ -157,6 +157,11 @@ export const Footer = () => {
   const navigate = useNavigate();
 
   const goToSection = (id: string) => {
+    // The templates grid moved to the dedicated downloads page.
+    if (id === "templates") {
+      navigate("/downloads");
+      return;
+    }
     if (location.pathname === "/") {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     } else {
@@ -198,7 +203,7 @@ export const Footer = () => {
             <ul className="space-y-2.5">
               <li>
                 <Link
-                  to="/library"
+                  to="/downloads"
                   className="font-sans text-sm text-primary-foreground/65 hover:text-primary-foreground transition-colors"
                 >
                   {t.libraryLabel}

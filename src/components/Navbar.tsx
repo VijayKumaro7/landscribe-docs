@@ -8,20 +8,19 @@ import { useTranslation, type Translations } from "@/i18n";
 
 interface NavbarStrings {
   home: string;
-  templates: string;
   howItWorks: string;
-  library: string;
+  downloads: string;
   contact: string;
   cta: string;
 }
 
 const navT: Translations<NavbarStrings> = {
-  en: { home: "Home", templates: "Templates", howItWorks: "How It Works", library: "Library", contact: "Contact", cta: "Get Started" },
-  hi: { home: "होम", templates: "टेम्प्लेट", howItWorks: "कैसे काम करता है", library: "लाइब्रेरी", contact: "संपर्क", cta: "शुरू करें" },
-  kn: { home: "ಮುಖ್ಯ", templates: "ಟೆಂಪ್ಲೇಟ್", howItWorks: "ಹೇಗೆ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತದೆ", library: "ಗ್ರಂಥಾಲಯ", contact: "ಸಂಪರ್ಕ", cta: "ಪ್ರಾರಂಭಿಸಿ" },
-  mr: { home: "होम", templates: "टेम्प्लेट्स", howItWorks: "कसे काम करते", library: "लायब्ररी", contact: "संपर्क", cta: "सुरुवात करा" },
-  ta: { home: "முகப்பு", templates: "வார்ப்புருக்கள்", howItWorks: "எப்படி செயல்படுகிறது", library: "நூலகம்", contact: "தொடர்பு", cta: "தொடங்குங்கள்" },
-  te: { home: "హోమ్", templates: "టెంప్లేట్లు", howItWorks: "ఎలా పని చేస్తుంది", library: "లైబ్రరీ", contact: "సంప్రదించండి", cta: "మొదలుపెట్టండి" },
+  en: { home: "Home", howItWorks: "How It Works", downloads: "Downloads", contact: "Contact", cta: "Get Started" },
+  hi: { home: "होम", howItWorks: "कैसे काम करता है", downloads: "डाउनलोड", contact: "संपर्क", cta: "शुरू करें" },
+  kn: { home: "ಮುಖ್ಯ", howItWorks: "ಹೇಗೆ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತದೆ", downloads: "ಡೌನ್‌ಲೋಡ್‌ಗಳು", contact: "ಸಂಪರ್ಕ", cta: "ಪ್ರಾರಂಭಿಸಿ" },
+  mr: { home: "होम", howItWorks: "कसे काम करते", downloads: "डाउनलोड", contact: "संपर्क", cta: "सुरुवात करा" },
+  ta: { home: "முகப்பு", howItWorks: "எப்படி செயல்படுகிறது", downloads: "பதிவிறக்கங்கள்", contact: "தொடர்பு", cta: "தொடங்குங்கள்" },
+  te: { home: "హోమ్", howItWorks: "ఎలా పని చేస్తుంది", downloads: "డౌన్లోడ్లు", contact: "సంప్రదించండి", cta: "మొదలుపెట్టండి" },
 };
 
 type NavLink =
@@ -30,9 +29,8 @@ type NavLink =
 
 const NAV_LINKS: NavLink[] = [
   { key: "home",       kind: "section", id: "hero" },
-  { key: "templates",  kind: "section", id: "templates" },
   { key: "howItWorks", kind: "section", id: "how-it-works" },
-  { key: "library",    kind: "route",   to: "/library" },
+  { key: "downloads",  kind: "route",   to: "/downloads" },
   { key: "contact",    kind: "section", id: "contact" },
 ];
 
@@ -40,7 +38,6 @@ const NAV_LINKS: NavLink[] = [
 const SECTION_TO_KEY: Record<string, keyof NavbarStrings> = {
   hero:           "home",
   features:       "home",
-  templates:      "templates",
   "how-it-works": "howItWorks",
   testimonials:   "contact",
   contact:        "contact",
@@ -166,7 +163,7 @@ export const Navbar = () => {
           <ThemeToggle solid={solid} />
           <LanguageSelector />
           <Button
-            onClick={() => goToSection("templates")}
+            onClick={() => navigate("/downloads")}
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-sm px-5 h-9 rounded-sm ml-1"
           >
             {t.cta}
@@ -206,7 +203,10 @@ export const Navbar = () => {
             <ThemeToggle solid />
             <LanguageSelector />
             <Button
-              onClick={() => goToSection("templates")}
+              onClick={() => {
+                navigate("/downloads");
+                setMobileOpen(false);
+              }}
               className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-sm"
             >
               {t.cta}
