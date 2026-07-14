@@ -107,8 +107,20 @@ export const HowItWorksSection = () => {
 
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 relative">
-          {/* Connector lines (desktop) */}
-          <div className="hidden md:block absolute top-8 left-1/3 right-1/3 h-px bg-white/15 pointer-events-none" aria-hidden="true" />
+          {/* Connector segments (desktop) — run between the number boxes and
+              stop short of them, so no line cuts through the translucent
+              squares. Column centers sit at 16.67% / 50% / 83.33%; the boxes
+              are 4rem wide, so segments start 2.75rem past each center. */}
+          <div
+            className="hidden md:block absolute top-8 h-px bg-white/15 pointer-events-none"
+            style={{ left: "calc(16.667% + 2.75rem)", right: "calc(50% + 2.75rem)" }}
+            aria-hidden="true"
+          />
+          <div
+            className="hidden md:block absolute top-8 h-px bg-white/15 pointer-events-none"
+            style={{ left: "calc(50% + 2.75rem)", right: "calc(16.667% + 2.75rem)" }}
+            aria-hidden="true"
+          />
 
           {t.steps.map((step, i) => (
             <Reveal key={i} delay={i * 130} className="relative flex flex-col items-center text-center px-6 sm:px-8 py-10 md:py-0">
