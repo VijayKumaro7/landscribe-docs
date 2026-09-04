@@ -29,11 +29,19 @@
     --accent: 40 60% 39%;
     --accent-foreground: 28 18% 13%;
 
-    --success: 142 48% 36%;
+    /* Lightness on the muted/success tokens is set so small text clears
+       WCAG AA (4.5:1) on both the cream background and white cards. */
+    --success: 142 48% 31%;
     --success-foreground: 0 0% 98%;
 
     --muted: 38 18% 88%;
-    --muted-foreground: 28 12% 48%;
+    --muted-foreground: 28 12% 43%;
+
+    /* The footer stays a deep green in both themes. Using --primary here
+       would flip it to a light green in dark mode, and its opacity-muted
+       text can't clear AA against that. */
+    --footer: 125 36% 17%;
+    --footer-foreground: 40 30% 94%;
 
     --destructive: 0 78% 55%;
     --destructive-foreground: 0 0% 98%;
@@ -69,6 +77,10 @@
     --muted-foreground: 40 12% 58%;
     --accent: 40 55% 52%;
     --accent-foreground: 28 18% 10%;
+    --footer: 125 30% 9%;
+    --footer-foreground: 40 25% 90%;
+    /* Lighter than the light-theme green so it reads on dark surfaces. */
+    --success: 142 45% 58%;
     --primary-glow: 125 30% 52%;
     --destructive: 0 60% 45%;
     --destructive-foreground: 0 0% 98%;

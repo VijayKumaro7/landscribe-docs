@@ -142,7 +142,7 @@ export const Navbar = () => {
                 className={`
                   relative text-sm font-medium transition-colors pb-0.5
                   ${solid
-                    ? isActive ? "text-primary" : "text-foreground/60 hover:text-primary"
+                    ? isActive ? "text-primary" : "text-foreground/70 hover:text-primary"
                     : isActive ? "text-white" : "text-white/70 hover:text-white"}
                 `}
               >

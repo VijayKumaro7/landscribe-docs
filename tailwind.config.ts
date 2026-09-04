@@ -49,6 +49,10 @@ export default {
           DEFAULT: "hsl(var(--success))",
           foreground: "hsl(var(--success-foreground))",
         },
+        footer: {
+          DEFAULT: "hsl(var(--footer))",
+          foreground: "hsl(var(--footer-foreground))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
