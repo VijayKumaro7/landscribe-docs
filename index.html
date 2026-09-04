@@ -9,24 +9,67 @@
     <meta name="theme-color" content="#1d3a21" />
     <meta name="keywords" content="land registration, property documents, sale deed, gift deed, legal templates, India, Karnataka, Hindi, Kannada, English, Marathi, Tamil, Telugu" />
 
+    <!-- Absolute URLs: link scrapers don't resolve relative paths. -->
     <meta property="og:title" content="LandDocs - Professional Land Registration Templates" />
     <meta property="og:description" content="Secure land registration documentation made simple. Professional templates in multiple languages with transparent pricing." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:site_name" content="LandDocs" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:url" content="https://landdocs.com/" />
+    <meta property="og:image" content="https://landdocs.com/og-image.png" />
+    <meta property="og:image:alt" content="LandDocs — land registration templates in six Indian languages" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@landdocs" />
     <meta name="twitter:title" content="LandDocs - Land Registration Made Simple" />
     <meta name="twitter:description" content="Professional land registration templates and transparent legal services" />
-    <meta name="twitter:image" content="/og-image.png" />
+    <meta name="twitter:image" content="https://landdocs.com/og-image.png" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="canonical" href="https://landdocs.com" />
+    <link rel="canonical" href="https://landdocs.com/" />
     <!-- Fonts are self-hosted (public/fonts) — no third-party requests. -->
     <link rel="preload" href="/fonts/Inter-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/PlayfairDisplay-700.woff2" as="font" type="font/woff2" crossorigin />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://landdocs.com/#organization",
+            "name": "LandDocs",
+            "url": "https://landdocs.com/",
+            "logo": "https://landdocs.com/apple-touch-icon.png",
+            "description": "Land registration templates and documentation services in six Indian languages.",
+            "areaServed": "IN",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Bangalore",
+              "addressRegion": "Karnataka",
+              "addressCountry": "IN"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "support@landdocs.com",
+              "telephone": "+91-80-1234-5678",
+              "availableLanguage": ["English", "Hindi", "Kannada", "Marathi", "Tamil", "Telugu"]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://landdocs.com/#website",
+            "url": "https://landdocs.com/",
+            "name": "LandDocs",
+            "publisher": { "@id": "https://landdocs.com/#organization" },
+            "inLanguage": ["en", "hi", "kn", "mr", "ta", "te"]
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>
