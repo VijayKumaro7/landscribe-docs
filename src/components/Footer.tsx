@@ -174,7 +174,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-footer text-footer-foreground">
       <div className="container mx-auto px-5 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 py-12 sm:py-14 border-b border-white/10">
 
@@ -189,23 +189,23 @@ export const Footer = () => {
               <span className="rounded-[9px] ring-1 ring-white/20 group-hover:ring-white/35 transition-shadow inline-flex">
                 <Logo className="w-8 h-8 shrink-0" />
               </span>
-              <span className="font-serif text-lg font-bold text-primary-foreground">LandDocs</span>
+              <span className="font-serif text-lg font-bold text-footer-foreground">LandDocs</span>
             </button>
-            <p className="font-sans text-primary-foreground/55 text-sm leading-relaxed">
+            <p className="font-sans text-footer-foreground/70 text-sm leading-relaxed">
               {t.tagline}
             </p>
           </div>
 
           {/* Quick links */}
           <nav aria-label={t.links.quick}>
-            <h4 className="font-sans text-xs font-semibold uppercase tracking-widest text-primary-foreground/50 mb-5">
+            <h4 className="font-sans text-xs font-semibold uppercase tracking-widest text-footer-foreground/70 mb-5">
               {t.links.quick}
             </h4>
             <ul className="space-y-2.5">
               <li>
                 <Link
                   to="/services"
-                  className="font-sans text-sm text-primary-foreground/65 hover:text-primary-foreground transition-colors"
+                  className="font-sans text-sm text-footer-foreground/65 hover:text-footer-foreground transition-colors"
                 >
                   {t.libraryLabel}
                 </Link>
@@ -214,7 +214,7 @@ export const Footer = () => {
                 <li key={label}>
                   <button
                     onClick={() => goToSection(target)}
-                    className="font-sans text-sm text-primary-foreground/65 hover:text-primary-foreground transition-colors text-left"
+                    className="font-sans text-sm text-footer-foreground/65 hover:text-footer-foreground transition-colors text-left"
                   >
                     {label}
                   </button>
@@ -225,7 +225,7 @@ export const Footer = () => {
 
           {/* Services */}
           <nav aria-label={t.links.services}>
-            <h4 className="font-sans text-xs font-semibold uppercase tracking-widest text-primary-foreground/50 mb-5">
+            <h4 className="font-sans text-xs font-semibold uppercase tracking-widest text-footer-foreground/70 mb-5">
               {t.links.services}
             </h4>
             <ul className="space-y-2.5">
@@ -233,7 +233,7 @@ export const Footer = () => {
                 <li key={label}>
                   <button
                     onClick={() => goToSection(target)}
-                    className="font-sans text-sm text-primary-foreground/65 hover:text-primary-foreground transition-colors text-left"
+                    className="font-sans text-sm text-footer-foreground/65 hover:text-footer-foreground transition-colors text-left"
                   >
                     {label}
                   </button>
@@ -244,7 +244,7 @@ export const Footer = () => {
 
           {/* Legal */}
           <nav aria-label={t.links.legal}>
-            <h4 className="font-sans text-xs font-semibold uppercase tracking-widest text-primary-foreground/50 mb-5">
+            <h4 className="font-sans text-xs font-semibold uppercase tracking-widest text-footer-foreground/70 mb-5">
               {t.links.legal}
             </h4>
             <ul className="space-y-2.5">
@@ -252,7 +252,7 @@ export const Footer = () => {
                 <li key={label}>
                   <button
                     onClick={() => handleLegalLink(label)}
-                    className="font-sans text-sm text-primary-foreground/65 hover:text-primary-foreground transition-colors text-left"
+                    className="font-sans text-sm text-footer-foreground/65 hover:text-footer-foreground transition-colors text-left"
                   >
                     {label}
                   </button>
@@ -264,10 +264,10 @@ export const Footer = () => {
 
         {/* Copyright row */}
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-sans text-primary-foreground/55 text-xs">
+          <p className="font-sans text-footer-foreground/65 text-xs">
             © {new Date().getFullYear()} {t.copyright}
           </p>
-          <p className="font-sans text-primary-foreground/45 text-xs">{t.madeWith}</p>
+          <p className="font-sans text-footer-foreground/60 text-xs">{t.madeWith}</p>
         </div>
       </div>
     </footer>
