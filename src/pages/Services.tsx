@@ -16,6 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { usePageMetadata } from "@/hooks/use-page-metadata";
 import {
   SUPPORTED_LANGUAGES,
   isLanguageCode,
@@ -216,6 +217,8 @@ const Services = () => {
   const t = useTranslation(servicesT);
   const { language } = useLanguage();
   const { toast } = useToast();
+
+  usePageMetadata({ title: t.title, description: t.subtitle, path: "/services" });
 
   const [search, setSearch] = useState("");
   const [langFilter, setLangFilter] = useState<LanguageCode | "all">("all");
