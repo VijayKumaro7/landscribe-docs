@@ -32,6 +32,8 @@ interface ContactStrings {
   errors: { nameRequired: string; emailRequired: string; emailInvalid: string; messageRequired: string };
   successTitle: string;
   success: string;
+  errorTitle: string;
+  errorBody: string;
   promiseTitle: string;
   promises: string[];
   downloadCta: string;
@@ -71,6 +73,8 @@ const translations: Translations<ContactStrings> = {
     },
     successTitle: "Message sent!",
     success: "We received your message! Our team will contact you within 24 hours.",
+    errorTitle: "Message not sent",
+    errorBody: "Something went wrong sending your message. Please try again, or email us at support@landdocs.com.",
     promiseTitle: "Our Promise",
     promises: ["Free initial consultation", "Response within 24 hours", "No hidden charges"],
     downloadCta: "Download Documents",
@@ -86,6 +90,8 @@ const translations: Translations<ContactStrings> = {
     errors: { nameRequired: "कृपया अपना नाम दर्ज करें।", emailRequired: "कृपया ईमेल पता दर्ज करें।", emailInvalid: "कृपया मान्य ईमेल पता दर्ज करें।", messageRequired: "कृपया संदेश दर्ज करें।" },
     successTitle: "संदेश भेजा गया!",
     success: "आपका संदेश प्राप्त हुआ! हमारी टीम 24 घंटे में संपर्क करेगी।",
+    errorTitle: "संदेश नहीं भेजा गया",
+    errorBody: "आपका संदेश भेजने में समस्या हुई। कृपया पुनः प्रयास करें, या support@landdocs.com पर ईमेल करें।",
     promiseTitle: "हमारा वादा",
     promises: ["नि:शुल्क प्रारंभिक परामर्श", "24 घंटे में जवाब", "कोई छुपा शुल्क नहीं"],
     downloadCta: "दस्तावेज़ डाउनलोड करें",
@@ -101,6 +107,8 @@ const translations: Translations<ContactStrings> = {
     errors: { nameRequired: "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹೆಸರು ನಮೂದಿಸಿ.", emailRequired: "ದಯವಿಟ್ಟು ಇಮೇಲ್ ವಿಳಾಸ ನಮೂದಿಸಿ.", emailInvalid: "ದಯವಿಟ್ಟು ಮಾನ್ಯ ಇಮೇಲ್ ವಿಳಾಸ ನಮೂದಿಸಿ.", messageRequired: "ದಯವಿಟ್ಟು ಸಂದೇಶ ನಮೂದಿಸಿ." },
     successTitle: "ಸಂದೇಶ ಕಳುಹಿಸಲಾಗಿದೆ!",
     success: "ನಿಮ್ಮ ಸಂದೇಶ ಸ್ವೀಕರಿಸಲಾಗಿದೆ! ನಮ್ಮ ತಂಡ 24 ಗಂಟೆಗಳೊಳಗೆ ಸಂಪರ್ಕಿಸುತ್ತದೆ.",
+    errorTitle: "ಸಂದೇಶ ಕಳುಹಿಸಲಾಗಿಲ್ಲ",
+    errorBody: "ನಿಮ್ಮ ಸಂದೇಶ ಕಳುಹಿಸುವಲ್ಲಿ ಸಮಸ್ಯೆಯಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ, ಅಥವಾ support@landdocs.com ಗೆ ಇಮೇಲ್ ಮಾಡಿ.",
     promiseTitle: "ನಮ್ಮ ಭರವಸೆ",
     promises: ["ಉಚಿತ ಆರಂಭಿಕ ಸಮಾಲೋಚನೆ", "24 ಗಂಟೆಗಳೊಳಗೆ ಪ್ರತಿಕ್ರಿಯೆ", "ಗುಪ್ತ ಶುಲ್ಕಗಳಿಲ್ಲ"],
     downloadCta: "ದಾಖಲೆಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
@@ -116,6 +124,8 @@ const translations: Translations<ContactStrings> = {
     errors: { nameRequired: "कृपया तुमचे नाव प्रविष्ट करा.", emailRequired: "कृपया ईमेल पत्ता प्रविष्ट करा.", emailInvalid: "कृपया वैध ईमेल पत्ता प्रविष्ट करा.", messageRequired: "कृपया संदेश प्रविष्ट करा." },
     successTitle: "संदेश पाठवला!",
     success: "तुमचा संदेश मिळाला! आमची टीम 24 तासांत संपर्क करेल.",
+    errorTitle: "संदेश पाठवला गेला नाही",
+    errorBody: "तुमचा संदेश पाठवताना अडचण आली. कृपया पुन्हा प्रयत्न करा, किंवा support@landdocs.com वर ईमेल करा.",
     promiseTitle: "आमचे वचन",
     promises: ["विनामूल्य प्रारंभिक सल्ला", "24 तासांत प्रतिसाद", "कोणतेही छुपे शुल्क नाही"],
     downloadCta: "दस्तऐवज डाउनलोड करा",
@@ -131,6 +141,8 @@ const translations: Translations<ContactStrings> = {
     errors: { nameRequired: "உங்கள் பெயரை உள்ளிடவும்.", emailRequired: "மின்னஞ்சல் முகவரியை உள்ளிடவும்.", emailInvalid: "சரியான மின்னஞ்சல் முகவரியை உள்ளிடவும்.", messageRequired: "செய்தியை உள்ளிடவும்." },
     successTitle: "செய்தி அனுப்பப்பட்டது!",
     success: "உங்கள் செய்தி கிடைத்தது! எங்கள் குழு 24 மணி நேரத்தில் தொடர்பு கொள்ளும்.",
+    errorTitle: "செய்தி அனுப்பப்படவில்லை",
+    errorBody: "உங்கள் செய்தியை அனுப்புவதில் சிக்கல் ஏற்பட்டது. மீண்டும் முயற்சிக்கவும், அல்லது support@landdocs.com க்கு மின்னஞ்சல் அனுப்பவும்.",
     promiseTitle: "எங்கள் வாக்குறுதி",
     promises: ["இலவச ஆரம்ப ஆலோசனை", "24 மணி நேரத்தில் பதில்", "மறைமுகக் கட்டணங்கள் இல்லை"],
     downloadCta: "ஆவணங்களைப் பதிவிறக்கவும்",
@@ -146,6 +158,8 @@ const translations: Translations<ContactStrings> = {
     errors: { nameRequired: "దయచేసి మీ పేరు నమోదు చేయండి.", emailRequired: "దయచేసి ఇమెయిల్ చిరునామా నమోదు చేయండి.", emailInvalid: "దయచేసి చెల్లుబాటు అయ్యే ఇమెయిల్ నమోదు చేయండి.", messageRequired: "దయచేసి సందేశం నమోదు చేయండి." },
     successTitle: "సందేశం పంపబడింది!",
     success: "మీ సందేశం అందింది! మా బృందం 24 గంటల్లో సంప్రదిస్తుంది.",
+    errorTitle: "సందేశం పంపబడలేదు",
+    errorBody: "మీ సందేశాన్ని పంపడంలో సమస్య ఏర్పడింది. దయచేసి మళ్లీ ప్రయత్నించండి, లేదా support@landdocs.com కు ఇమెయిల్ చేయండి.",
     promiseTitle: "మా వాగ్దానం",
     promises: ["ఉచిత ప్రారంభ సంప్రదింపు", "24 గంటల్లో స్పందన", "దాచిన ఛార్జీలు లేవు"],
     downloadCta: "పత్రాలను డౌన్లోడ్ చేయండి",
@@ -165,6 +179,9 @@ type FormErrors = Partial<Record<"name" | "email" | "message", string>>;
 
 const EMPTY_FORM: FormData = { name: "", email: "", phone: "", service: "", message: "" };
 
+/** Must match the static detection form in index.html. */
+const CONTACT_FORM_NAME = "contact";
+
 export const ContactSection = () => {
   const t = useTranslation(translations);
   const { toast } = useToast();
@@ -172,6 +189,8 @@ export const ContactSection = () => {
   const [formData, setFormData] = useState<FormData>(EMPTY_FORM);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitting, setSubmitting] = useState(false);
+  // Honeypot: real people never see this field, so anything in it is a bot.
+  const [botField, setBotField] = useState("");
 
   const validate = (data: FormData): FormErrors => {
     const next: FormErrors = {};
@@ -193,14 +212,31 @@ export const ContactSection = () => {
       return;
     }
 
-    // There is no backend yet — simulate a short submission round-trip so the
-    // UI communicates progress honestly when one is wired up.
+    // Posts to the static form declared in index.html, which is what Netlify
+    // detects at build time. Only report success if the POST actually landed —
+    // otherwise the visitor is told a message was sent that never was.
     setSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 600));
-    setSubmitting(false);
+    try {
+      const body = new URLSearchParams({
+        "form-name": CONTACT_FORM_NAME,
+        "bot-field": botField,
+        ...formData,
+      });
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      if (!response.ok) throw new Error(`Form POST failed with ${response.status}`);
 
-    toast({ title: t.successTitle, description: t.success });
-    setFormData(EMPTY_FORM);
+      toast({ title: t.successTitle, description: t.success });
+      setFormData(EMPTY_FORM);
+    } catch (err) {
+      console.error("Contact form submission failed", err);
+      toast({ variant: "destructive", title: t.errorTitle, description: t.errorBody });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const set = (field: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -235,7 +271,22 @@ export const ContactSection = () => {
         <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {/* Form */}
           <Reveal className="lg:col-span-3 bg-card border border-border p-6 sm:p-8">
-            <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+            <form
+              name={CONTACT_FORM_NAME}
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+              className="space-y-5"
+              noValidate
+            >
+              <input type="hidden" name="form-name" value={CONTACT_FORM_NAME} />
+              <p hidden>
+                <label>
+                  Don't fill this out if you're human
+                  <input name="bot-field" value={botField} onChange={(e) => setBotField(e.target.value)} />
+                </label>
+              </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <Label htmlFor="name" className="font-sans text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -243,6 +294,7 @@ export const ContactSection = () => {
                   </Label>
                   <Input
                     id="name"
+                    name="name"
                     value={formData.name}
                     onChange={set("name")}
                     placeholder={t.form.namePlaceholder}
@@ -260,6 +312,7 @@ export const ContactSection = () => {
                   </Label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     value={formData.email}
                     onChange={set("email")}
@@ -281,6 +334,7 @@ export const ContactSection = () => {
                   </Label>
                   <Input
                     id="phone"
+                    name="phone"
                     type="tel"
                     value={formData.phone}
                     onChange={set("phone")}
@@ -295,6 +349,7 @@ export const ContactSection = () => {
                   </Label>
                   <select
                     id="service"
+                    name="service"
                     value={formData.service}
                     onChange={set("service")}
                     className="w-full h-10 px-3 rounded-sm border border-border bg-background font-sans text-sm text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -311,6 +366,7 @@ export const ContactSection = () => {
                 </Label>
                 <Textarea
                   id="message"
+                  name="message"
                   value={formData.message}
                   onChange={set("message")}
                   placeholder={t.form.messagePlaceholder}

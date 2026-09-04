@@ -25,9 +25,11 @@
     --secondary: 125 28% 34%;
     --secondary-foreground: 40 30% 94%;
 
-    /* Warm gold */
-    --accent: 40 60% 39%;
-    --accent-foreground: 28 18% 13%;
+    /* Warm gold. Deep enough that it clears AA both as small text on the
+       cream background (4.74:1) and as a button fill under cream text
+       (4.74:1) — the previous lighter gold failed both ways. */
+    --accent: 40 60% 34%;
+    --accent-foreground: 40 30% 96%;
 
     /* Lightness on the muted/success tokens is set so small text clears
        WCAG AA (4.5:1) on both the cream background and white cards. */
