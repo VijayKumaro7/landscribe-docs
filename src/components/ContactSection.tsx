@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Reveal } from "./Reveal";
 import { useToast } from "@/hooks/use-toast";
-import { useTranslation, type Translations } from "@/i18n";
+import { useLocalizedPath, useTranslation, type Translations } from "@/i18n";
 
 interface ContactStrings {
   eyebrow: string;
@@ -184,6 +184,7 @@ const CONTACT_FORM_NAME = "contact";
 
 export const ContactSection = () => {
   const t = useTranslation(translations);
+  const localized = useLocalizedPath();
   const { toast } = useToast();
 
   const [formData, setFormData] = useState<FormData>(EMPTY_FORM);
@@ -441,7 +442,7 @@ export const ContactSection = () => {
               variant="outline"
               className="w-full h-11 rounded-sm font-sans font-semibold text-sm border-primary/30 text-primary hover:bg-primary/5 hover:text-primary"
             >
-              <Link to="/services">
+              <Link to={localized("/services")}>
                 <Download className="h-4 w-4 mr-2" aria-hidden="true" />
                 {t.downloadCta}
               </Link>

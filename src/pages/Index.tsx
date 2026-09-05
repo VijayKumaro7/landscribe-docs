@@ -10,7 +10,7 @@ import { SectionNav } from "@/components/SectionNav";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Footer } from "@/components/Footer";
 import { usePageMetadata } from "@/hooks/use-page-metadata";
-import { useTranslation, type Translations } from "@/i18n";
+import { useLocalizedPath, useTranslation, type Translations } from "@/i18n";
 
 interface IndexMeta {
   title: string;
@@ -54,6 +54,7 @@ const Index = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const meta = useTranslation(indexMeta);
+  const localized = useLocalizedPath();
 
   usePageMetadata({ title: meta.title, description: meta.description, path: "/" });
 
@@ -83,7 +84,7 @@ const Index = () => {
 
       <main id="main-content">
         <HeroSection
-          onGetStarted={() => navigate("/services")}
+          onGetStarted={() => navigate(localized("/services"))}
           onLearnMore={() => scrollTo("how-it-works")}
         />
         <FeaturesSection />

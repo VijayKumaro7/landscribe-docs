@@ -1,13 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://landdocs.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landdocs.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://landdocs.com/hi"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://landdocs.com/kn"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://landdocs.com/mr"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://landdocs.com/ta"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://landdocs.com/te"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landdocs.com/"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://landdocs.com/hi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landdocs.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://landdocs.com/hi"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://landdocs.com/kn"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://landdocs.com/mr"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://landdocs.com/ta"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://landdocs.com/te"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landdocs.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://landdocs.com/kn</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landdocs.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://landdocs.com/hi"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://landdocs.com/kn"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://landdocs.com/mr"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://landdocs.com/ta"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://landdocs.com/te"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landdocs.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://landdocs.com/mr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landdocs.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://landdocs.com/hi"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://landdocs.com/kn"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://landdocs.com/mr"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://landdocs.com/ta"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://landdocs.com/te"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landdocs.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://landdocs.com/ta</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landdocs.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://landdocs.com/hi"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://landdocs.com/kn"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://landdocs.com/mr"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://landdocs.com/ta"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://landdocs.com/te"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landdocs.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://landdocs.com/te</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landdocs.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://landdocs.com/hi"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://landdocs.com/kn"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://landdocs.com/mr"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://landdocs.com/ta"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://landdocs.com/te"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landdocs.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://landdocs.com/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landdocs.com/services"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://landdocs.com/hi/services"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://landdocs.com/kn/services"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://landdocs.com/mr/services"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://landdocs.com/ta/services"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://landdocs.com/te/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landdocs.com/services"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://landdocs.com/hi/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landdocs.com/services"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://landdocs.com/hi/services"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://landdocs.com/kn/services"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://landdocs.com/mr/services"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://landdocs.com/ta/services"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://landdocs.com/te/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landdocs.com/services"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landdocs.com/kn/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landdocs.com/services"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://landdocs.com/hi/services"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://landdocs.com/kn/services"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://landdocs.com/mr/services"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://landdocs.com/ta/services"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://landdocs.com/te/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landdocs.com/services"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landdocs.com/mr/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landdocs.com/services"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://landdocs.com/hi/services"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://landdocs.com/kn/services"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://landdocs.com/mr/services"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://landdocs.com/ta/services"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://landdocs.com/te/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landdocs.com/services"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landdocs.com/ta/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landdocs.com/services"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://landdocs.com/hi/services"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://landdocs.com/kn/services"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://landdocs.com/mr/services"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://landdocs.com/ta/services"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://landdocs.com/te/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landdocs.com/services"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://landdocs.com/te/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://landdocs.com/services"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://landdocs.com/hi/services"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://landdocs.com/kn/services"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://landdocs.com/mr/services"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://landdocs.com/ta/services"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://landdocs.com/te/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landdocs.com/services"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

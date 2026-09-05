@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Download, ShieldCheck, FileText, Zap, Globe, type LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
-import { useTranslation, type Translations } from "@/i18n";
+import { useLocalizedPath, useTranslation, type Translations } from "@/i18n";
 
 const FEATURE_ICONS: LucideIcon[] = [ShieldCheck, FileText, Zap, Globe];
 
@@ -108,6 +108,7 @@ const translations: Translations<FeaturesStrings> = {
 
 export const FeaturesSection = () => {
   const t = useTranslation(translations);
+  const localized = useLocalizedPath();
 
   return (
     <section id="features" className="py-16 sm:py-20 md:py-24 bg-background">
@@ -154,7 +155,7 @@ export const FeaturesSection = () => {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans font-semibold h-12 px-8 rounded-sm text-sm tracking-wide"
           >
-            <Link to="/services">
+            <Link to={localized("/services")}>
               <Download className="h-4 w-4 mr-2" aria-hidden="true" />
               {t.downloadCta}
             </Link>
