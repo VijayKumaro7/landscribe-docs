@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, FileQuestion, LibraryBig } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { usePageMetadata } from "@/hooks/use-page-metadata";
-import { useTranslation, type Translations } from "@/i18n";
+import { parsePath, useLocalizedPath, useTranslation, type Translations } from "@/i18n";
 
 interface NotFoundStrings {
   eyebrow: string;
@@ -61,8 +61,15 @@ const notFoundT: Translations<NotFoundStrings> = {
 const NotFound = () => {
   const location = useLocation();
   const t = useTranslation(notFoundT);
+  const localized = useLocalizedPath();
 
-  usePageMetadata({ title: t.title, description: t.body, path: location.pathname, noindex: true });
+  usePageMetadata({
+    title: t.title,
+    description: t.body,
+    // Strip any language prefix so the hook does not add a second one.
+    path: parsePath(location.pathname).path,
+    noindex: true,
+  });
 
   useEffect(() => {
     console.warn(`404: no route matches "${location.pathname}"`);
@@ -79,13 +86,13 @@ const NotFound = () => {
         <p className="font-sans text-muted-foreground mb-8">{t.body}</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-sm font-sans font-semibold h-11 px-6">
-            <Link to="/">
+            <Link to={localized("/")}>
               <ArrowLeft className="h-4 w-4 mr-2" aria-hidden="true" />
               {t.home}
             </Link>
           </Button>
           <Button asChild variant="outline" className="rounded-sm font-sans font-medium h-11 px-6">
-            <Link to="/services">
+            <Link to={localized("/services")}>
               <LibraryBig className="h-4 w-4 mr-2" aria-hidden="true" />
               {t.documents}
             </Link>

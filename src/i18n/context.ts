@@ -1,5 +1,6 @@
-import { createContext, useContext } from "react";
+import { createContext, useCallback, useContext } from "react";
 import type { LanguageCode, Translations } from "./config";
+import { localizePath } from "./routes";
 
 export interface LanguageContextValue {
   language: LanguageCode;
@@ -23,4 +24,14 @@ export function useLanguage(): LanguageContextValue {
 export function useTranslation<T>(table: Translations<T>): T {
   const { language } = useLanguage();
   return table[language] ?? table.en;
+}
+
+/**
+ * Maps a canonical path ("/", "/services") onto the current language's URL.
+ * Every internal link goes through this so navigating never drops the
+ * visitor's language.
+ */
+export function useLocalizedPath(): (path: string) => string {
+  const { language } = useLanguage();
+  return useCallback((path: string) => localizePath(path, language), [language]);
 }

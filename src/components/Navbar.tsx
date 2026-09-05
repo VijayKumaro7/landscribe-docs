@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "./LanguageSelector";
 import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
-import { useTranslation, type Translations } from "@/i18n";
+import { parsePath, useLocalizedPath, useTranslation, type Translations } from "@/i18n";
 
 interface NavbarStrings {
   home: string;
@@ -53,7 +53,10 @@ export const Navbar = () => {
   const t = useTranslation(navT);
   const location = useLocation();
   const navigate = useNavigate();
-  const isHome = location.pathname === "/";
+  const localized = useLocalizedPath();
+  // The language prefix is not part of "which page is this".
+  const { path: canonicalPath } = parsePath(location.pathname);
+  const isHome = canonicalPath === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -88,7 +91,7 @@ export const Navbar = () => {
     if (isHome) {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     } else {
-      navigate(`/#${id}`);
+      navigate({ pathname: localized("/"), hash: id });
     }
     setMobileOpen(false);
   };
@@ -97,13 +100,13 @@ export const Navbar = () => {
     if (link.kind === "section") {
       goToSection(link.id);
     } else {
-      navigate(link.to);
+      navigate(localized(link.to));
       setMobileOpen(false);
     }
   };
 
   const isLinkActive = (link: NavLink) => {
-    if (link.kind === "route") return location.pathname.startsWith(link.to);
+    if (link.kind === "route") return canonicalPath.startsWith(link.to);
     return isHome && activeKey === link.key;
   };
 
@@ -121,7 +124,7 @@ export const Navbar = () => {
         {/* Logo */}
         <button
           className="flex items-center gap-2.5"
-          onClick={() => (isHome ? goToSection("hero") : navigate("/"))}
+          onClick={() => (isHome ? goToSection("hero") : navigate(localized("/")))}
           aria-label="LandDocs — go to homepage"
         >
           <Logo className="w-8 h-8 shrink-0" />
@@ -162,7 +165,7 @@ export const Navbar = () => {
           <ThemeToggle solid={solid} />
           <LanguageSelector />
           <Button
-            onClick={() => navigate("/services")}
+            onClick={() => navigate(localized("/services"))}
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-sm px-5 h-9 rounded-sm ml-1"
           >
             {t.cta}
@@ -203,7 +206,7 @@ export const Navbar = () => {
             <LanguageSelector />
             <Button
               onClick={() => {
-                navigate("/services");
+                navigate(localized("/services"));
                 setMobileOpen(false);
               }}
               className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-sm"

@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Logo } from "./Logo";
 import { useToast } from "@/hooks/use-toast";
-import { useTranslation, type Translations } from "@/i18n";
+import { parsePath, useLocalizedPath, useTranslation, type Translations } from "@/i18n";
 
 interface FooterStrings {
   tagline: string;
@@ -155,17 +155,18 @@ export const Footer = () => {
   const { toast } = useToast();
   const location = useLocation();
   const navigate = useNavigate();
+  const localized = useLocalizedPath();
 
   const goToSection = (id: string) => {
     // The templates grid moved to the dedicated downloads page.
     if (id === "templates") {
-      navigate("/services");
+      navigate(localized("/services"));
       return;
     }
-    if (location.pathname === "/") {
+    if (parsePath(location.pathname).path === "/") {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     } else {
-      navigate(`/#${id}`);
+      navigate({ pathname: localized("/"), hash: id });
     }
   };
 
@@ -204,7 +205,7 @@ export const Footer = () => {
             <ul className="space-y-2.5">
               <li>
                 <Link
-                  to="/services"
+                  to={localized("/services")}
                   className="font-sans text-sm text-footer-foreground/65 hover:text-footer-foreground transition-colors"
                 >
                   {t.libraryLabel}
