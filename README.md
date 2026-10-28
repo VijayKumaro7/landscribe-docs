@@ -10,9 +10,9 @@
 
 ![LandDocs — desktop view](docs/preview-desktop.png)
 
-**Document Library**
+**Services & Document Downloads**
 
-![LandDocs — document library](docs/preview-library.png)
+![LandDocs — services and document downloads](docs/preview-library.png)
 
 **Mobile**
 
