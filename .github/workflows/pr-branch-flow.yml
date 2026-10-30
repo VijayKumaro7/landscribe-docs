@@ -1,0 +1,70 @@
+name: PR branch flow
+
+# Generates a source -> target branch visualization for every pull request:
+#   * a sticky PR comment (works for every PR, kept current on each event)
+#   * docs/pr-flow/pr-<number>.md committed to the PR branch (same-repo PRs),
+#     so the entry lands in the docs when the PR merges.
+# All data comes from the pull_request event payload; see scripts/pr-branch-flow.mjs.
+
+on:
+  pull_request:
+    # `edited` covers a changed target branch or title; the head branch name of
+    # an existing PR cannot change on GitHub.
+    types: [opened, reopened, edited, synchronize, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: pr-branch-flow-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
+jobs:
+  branch-flow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # Merge ref: carries the script even for branches cut before it existed.
+      - name: Check out tooling
+        uses: actions/checkout@v4
+        with:
+          path: tool
+
+      - name: Update PR comment
+        run: node tool/scripts/pr-branch-flow.mjs comment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # The docs entry is only written while the PR is open: after a merge or
+      # close there is no branch left worth committing to. Fork PRs have a
+      # read-only token, so they get the comment only.
+      - name: Check out PR branch
+        if: github.event.action != 'closed' && github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          path: branch
+
+      - name: Generate docs entry
+        id: entry
+        if: github.event.action != 'closed' && github.event.pull_request.head.repo.full_name == github.repository
+        run: node tool/scripts/pr-branch-flow.mjs entry --out branch/docs/pr-flow
+
+      - name: Commit docs entry to PR branch
+        if: steps.entry.outputs.changed == 'true'
+        working-directory: branch
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "docs/pr-flow/pr-${PR_NUMBER}.md"
+          git commit -m "docs: update PR branch flow for #${PR_NUMBER}"
+          # A push by the author can land mid-run; rebase onto it and retry.
+          for attempt in 1 2 3; do
+            git push origin "HEAD:refs/heads/${HEAD_REF}" && exit 0
+            git pull --rebase origin "${HEAD_REF}" || break
+          done
+          echo "::warning::Could not push the PR branch flow entry (protected branch or concurrent push). The PR comment is still up to date."
